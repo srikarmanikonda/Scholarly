@@ -1,6 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Image, TextInput, TouchableOpacity, Dimensions, AsyncStorage, KeyboardAvoidingView } from 'react-native';
 
+const height = Dimensions.get('window').height;
+const width = Dimensions.get('window').width;
+//const wid = width / 380;
 export default function App() {
   return (
     <View style={styles.container}>
