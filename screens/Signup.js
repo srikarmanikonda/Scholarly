@@ -3,12 +3,13 @@ import { View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Image, Text
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import Firebase from '../components/firebase.js'
 import {LinearGradient} from 'expo-linear-gradient'
+import Logo from '../assets/Group_1_copy.png'
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
-var username = ''
-var email = ''
-var password = ''
+global.username = ''
+ global.email = ''
+ global.password = ''
 
 export default class Signup extends React.Component{
     constructor() {
