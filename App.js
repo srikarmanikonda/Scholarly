@@ -4,6 +4,7 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import {LinearGradient} from 'expo-linear-gradient'
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
+import Logo from './assets/Group_1_copy.png'
 
 class Login extends React.Component{
   constructor() {
@@ -30,10 +31,18 @@ class Login extends React.Component{
              height:height,
            }}
            />
+           <Image source ={Logo}
+           style = {{   height:400,
+  width:200,
+  position:'absolute',
+  top: "40%",
+borderColor:'#4169e1'
+}}/>
+ <View style={{marginBottom:'12%'}}></View>
             <TextInput
-              style={{ fontSize: 18, width: width*0.75, height: height*0.1, marginLeft: '5%', fontFamily: 'American Typewriter',borderColor: '#fff',
+              style={{ fontSize: 18, width: width*0.75, height: height*0.08, marginLeft: '5%', fontFamily: 'American Typewriter',borderColor: '#fff',
               borderWidth: 2,
-              borderRadius: 20  }}
+              borderRadius: 20,marginVertical:"10%"  }}
                 autoCapitalize='none'
                 placeholderTextColor = '#fff'
                 autoCompleteType='off'
@@ -45,9 +54,9 @@ class Login extends React.Component{
               />
 
               <TextInput
-                style={{ fontSize: 18, width:  width*0.75, height:  height*0.10, marginLeft: '5%', fontFamily: 'American Typewriter',borderColor: '#fff',
+                style={{ fontSize: 18, width:  width*0.75, height:  height*0.08, marginLeft: '5%', fontFamily: 'American Typewriter',borderColor: '#fff',
                 borderWidth: 2,
-                borderRadius: 20 }}
+                borderRadius: 20,marginVertical:"10%" }}
                 autoCapitalize='none'
                 autoCompleteType='off'
                 placeholderTextColor = '#fff'
@@ -61,7 +70,19 @@ class Login extends React.Component{
               <TouchableOpacity
               style = {styles.login} >
   </TouchableOpacity>
-
+<Text style =  {{  marginTop:'1.2%',
+  fontSize:40,
+  color:"white",
+  fontFamily:'Arial'
+}}> Log In </Text>
+<TouchableOpacity
+style = {styles.login} >
+</TouchableOpacity>
+<Text style =  {{  marginTop:'1.2%',
+fontSize:40,
+color:"white",
+fontFamily:'Arial'
+}}> Sign Up </Text>
 
               </View>
 
@@ -91,7 +112,7 @@ const styles = StyleSheet.create({
 width:width*0.8,
   backgroundColor:"maroon",
   borderRadius:25,
-  height:height*0.1,
+  height:height*0.09,
   alignItems:"center",
   justifyContent:"center",
   top:height*0.09
