@@ -1,8 +1,11 @@
 import React, {Component, useState} from 'react';
 import { View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Image, TextInput, TouchableOpacity, Dimensions, AsyncStorage, KeyboardAvoidingView } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import {LinearGradient} from 'expo-linear-gradient'
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
+import Logo from './assets/Group_1_copy.png'
+
 class Login extends React.Component{
   constructor() {
     super();
@@ -10,72 +13,108 @@ class Login extends React.Component{
       username:'',
       password:'',
     }
-    Text.defaultProps = Text.defaultProps || {};
-    // Ignore dynamic type scaling on iOS
-    Text.defaultProps.allowFontScaling = false;
-
+  }
+  static navigationOptions = {
+    title: 'Login',
   }
   render(){
-
+    const {navigate} = this.props.navigation;
   return (
       <View style={styles.container}>
-          <View style={{ width: '100%', height: '80%', alignItems: 'flex-end' }}>
-            <View style={{
-              width: '80%',
-              flex: 1.5,
-              borderColor: '#3C5984',
+      <LinearGradient
+   colors = {['#cc2b5e','#753a88']}
+   style={{
+             position: 'absolute',
+             left: 0,
+             right: 0,
+             top: 0,
+             height:height,
+           }}
+           />
+           <Image source ={Logo}
+           style = {{   height:400,
+  width:200,
+  position:'absolute',
+  top: "40%",
+borderColor:'#4169e1'
+}}/>
+ <View style={{marginBottom:'12%'}}></View>
+            <TextInput
+              style={{ fontSize: 18, width: width*0.75, height: height*0.08, marginLeft: '5%', fontFamily: 'American Typewriter',borderColor: '#fff',
               borderWidth: 2,
-              borderRadius: 20,
-            }}>
-              <TextInput                style={{ fontSize: 18, width: '95%', height: '100%', marginLeft: '5%', fontFamily: 'Arial' }}
+              borderRadius: 20,marginVertical:"10%"  }}
                 autoCapitalize='none'
+                placeholderTextColor = '#fff'
                 autoCompleteType='off'
                 placeholder="Username"
                 keyboardType={Platform.OS === 'ios' ? 'ascii-capable' : 'visible-password'}
                 onChangeText={(value) => this.setState({ username: value })}
                 value={this.state.username}
 
-              /></View>
-            <View style={{ width: '100%', flex: 0.4 }}></View>
-            <View style={{
-              width: '100%',
-              flex: 1.5,
-              borderColor: '#3C5984',
-              borderWidth: 2,
-              borderRadius: 20
-            }}>
+              />
+
               <TextInput
-                style={{ fontSize: 18, width: '95%', height: '100%', marginLeft: '5%', fontFamily: 'Arial' }}
+                style={{ fontSize: 18, width:  width*0.75, height:  height*0.08, marginLeft: '5%', fontFamily: 'American Typewriter',borderColor: '#fff',
+                borderWidth: 2,
+                borderRadius: 20,marginVertical:"10%" }}
                 autoCapitalize='none'
                 autoCompleteType='off'
+                placeholderTextColor = '#fff'
                 placeholder="Password"
                 onChangeText={(value) => this.setState({ password: value })}
                 value={this.state.password}
                 secureTextEntry={true}
 
               />
+
+              <TouchableOpacity
+              style = {styles.login} >
+  </TouchableOpacity>
+<Text style =  {{  marginTop:'1.2%',
+  fontSize:40,
+  color:"white",
+  fontFamily:'Arial'
+}}> Log In </Text>
+<TouchableOpacity
+style = {styles.login} >
+</TouchableOpacity>
+<Text style =  {{  marginTop:'1.2%',
+fontSize:40,
+color:"white",
+fontFamily:'Arial'
+}}> Sign Up </Text>
+
               </View>
 
-          </View>
-        </View>
-  )
+  );
   }
   }
 
-  const AppNavigator = createSwitchNavigator({
-    Home: {
-      screen: Login
-    },
+
+
+
+const AppNavigator = createSwitchNavigator({
+  Login: {
+    screen: Login
+  },
 })
+
+export default createAppContainer(AppNavigator);
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  login:{
+width:width*0.8,
+  backgroundColor:"maroon",
+  borderRadius:25,
+  height:height*0.09,
+  alignItems:"center",
+  justifyContent:"center",
+  top:height*0.09
+},
 });
-
-
-
-export default createAppContainer(AppNavigator);
