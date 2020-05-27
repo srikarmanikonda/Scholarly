@@ -5,7 +5,9 @@ import Logo from './assets/Group_1_copy.png'
 import Firebase from './components/firebase.js'
 import {LinearGradient} from 'expo-linear-gradient'
 
-import Nav from './SwitchNav'
+import Login from './screens/Login'
+import Signup from './screens/Signup'
+import HomeScreen from './screens/HomeScreen'
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -13,27 +15,18 @@ var username = ''
 var email = ''
 var password = ''
 
+const AppNavigator = createSwitchNavigator({
+    Login: {
+      screen: Login
+    },
+    Signup:{
+      screen: Signup
+    },
+    HomeScreen:{
+      screen: HomeScreen
+    },
+  })
 
-export default function App(){
-  return(
-    <Nav/>
-  )
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'transparent',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  login:{
-width:width*0.8,
-  backgroundColor:"maroon",
-  borderRadius:25,
-  height:height*0.09,
-  alignItems:"center",
-  justifyContent:"center",
-  top:height*0.09
-},
-});
+  
+  export default createAppContainer(AppNavigator);
