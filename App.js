@@ -1,10 +1,11 @@
 import React, {Component, useState} from 'react';
 import { View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Image, TextInput, TouchableOpacity, Dimensions, AsyncStorage, KeyboardAvoidingView } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import Logo from './assets/Group_1_copy.png'
+
 import {LinearGradient} from 'expo-linear-gradient'
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
-import Logo from './assets/Group_1_copy.png'
 
 class Login extends React.Component{
   constructor() {
@@ -21,6 +22,8 @@ class Login extends React.Component{
     const {navigate} = this.props.navigation;
   return (
       <View style={styles.container}>
+
+
       <LinearGradient
    colors = {['#cc2b5e','#753a88']}
    style={{
@@ -31,18 +34,19 @@ class Login extends React.Component{
              height:height,
            }}
            />
+
+
            <Image source ={Logo}
-           style = {{   height:400,
-  width:200,
+           style = {{   height:210,
+  width:230,
   position:'absolute',
-  top: "40%",
-borderColor:'#4169e1'
+  top: "4%",
 }}/>
- <View style={{marginBottom:'12%'}}></View>
+
             <TextInput
               style={{ fontSize: 18, width: width*0.75, height: height*0.08, marginLeft: '5%', fontFamily: 'American Typewriter',borderColor: '#fff',
               borderWidth: 2,
-              borderRadius: 20,marginVertical:"10%"  }}
+              borderRadius: 20,marginVertical:"10%",top:"11%" }}
                 autoCapitalize='none'
                 placeholderTextColor = '#fff'
                 autoCompleteType='off'
@@ -56,7 +60,7 @@ borderColor:'#4169e1'
               <TextInput
                 style={{ fontSize: 18, width:  width*0.75, height:  height*0.08, marginLeft: '5%', fontFamily: 'American Typewriter',borderColor: '#fff',
                 borderWidth: 2,
-                borderRadius: 20,marginVertical:"10%" }}
+                borderRadius: 20,marginVertical:"10%",top:"9%" }}
                 autoCapitalize='none'
                 autoCompleteType='off'
                 placeholderTextColor = '#fff'
