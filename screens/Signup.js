@@ -10,7 +10,7 @@ const width = Dimensions.get('window').width;
 global.username = ''
  global.email = ''
  global.password = ''
-
+global.activitynum = 0
 export default class Signup extends React.Component{
     constructor() {
       super();
@@ -101,7 +101,7 @@ export default class Signup extends React.Component{
                   email: Firebase.auth().currentUser.email,
                   password:password
 })
-).then( Firebase.auth().signOut()).then(navigate("Login"))
+).then( Firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)).then(navigate("Map"))
 }
   style = {styles.login} >
 

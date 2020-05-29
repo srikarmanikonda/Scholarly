@@ -4,11 +4,11 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import Logo from './assets/Group_1_copy.png'
 import Firebase from './components/firebase.js'
 import {LinearGradient} from 'expo-linear-gradient'
-
+import { Notifications } from 'expo';
 import Login from './screens/Login'
 import Signup from './screens/Signup'
 import HomeScreen from './screens/HomeScreen'
-
+import Map from './screens/Map'
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 var username = ''
@@ -25,8 +25,11 @@ const AppNavigator = createSwitchNavigator({
     HomeScreen:{
       screen: HomeScreen
     },
+    Map:{
+      screen:Map
+    }
   })
 
 
-  
+
   export default createAppContainer(AppNavigator);

@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Image, Text
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import Logo from '../assets/Group_1_copy.png'
 import {LinearGradient} from 'expo-linear-gradient'
+import Firebase from '../components/firebase.js'
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -21,13 +22,13 @@ export default class Login extends React.Component{
     static navigationOptions = {
       title: 'Login',
     }
- 
+
     render(){
       const {navigate} = this.props.navigation;
     return (
         <View style={styles.container}>
- 
- 
+
+
         <LinearGradient
      colors = {['#cc2b5e','#753a88']}
      style={{
@@ -38,15 +39,15 @@ export default class Login extends React.Component{
                height:height,
              }}
              />
- 
- 
+
+
              <Image source ={Logo}
              style = {{   height:210,
     width:230,
     position:'absolute',
     top: "4%",
   }}/>
- 
+
               <TextInput
                 style={{ fontSize: 18.0000, width: width*0.75, height: height*0.08, marginLeft: '5%',borderColor: '#fff',
                 borderWidth: 2,
@@ -55,12 +56,11 @@ export default class Login extends React.Component{
                   placeholderTextColor = '#fff'
                   autoCompleteType='off'
                   placeholder="Username"
-                  keyboardType={Platform.OS === 'ios' ? 'ascii-capable' : 'visible-password'}
                   onChangeText={(value) => this.setState({ email: value })}
                   value={this.state.email}
- 
+
                 />
- 
+
                 <TextInput
                   style={{ fontSize: 18.0000, width:  width*0.75, height:  height*0.08, marginLeft: '5%', borderColor: '#fff',
                   borderWidth: 2,
@@ -72,18 +72,20 @@ export default class Login extends React.Component{
                   onChangeText={(value) => this.setState({ password: value })}
                   value={this.state.password}
                   secureTextEntry={true}
- 
+
                 />
 
- 
+
                 <TouchableOpacity
-                style = {styles.login} >
+                style = {styles.login}
+                onPress = { () =>Firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then(navigate("Map"))} >
+
     </TouchableOpacity>
 
   <Text style =  {{  marginTop:'1.2%',
     fontSize:40,
     color:"white",
-  }}> Log In 
+  }}> Log In
   </Text>
 
   <TouchableOpacity
@@ -98,9 +100,9 @@ export default class Login extends React.Component{
   fontSize:40,
   color:"white",
   }} > Sign Up </Text>
- 
+
 </View>
- 
+
     );
     }
     }
@@ -123,5 +125,3 @@ export default class Login extends React.Component{
         top:height*0.09
       },
       });
-
-      
