@@ -4,6 +4,7 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import Logo from './assets/Group_1_copy.png'
 import Firebase from './components/firebase.js'
 import {LinearGradient} from 'expo-linear-gradient'
+import * as Permissions from 'expo-permissions';
 
 import Nav from './SwitchNav'
 

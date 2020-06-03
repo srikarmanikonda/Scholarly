@@ -31,10 +31,10 @@ export default class Map extends React.Component{
                Alert.alert('Permission to access location was denied, we need your location to access your proximity to COVID hotspots')
 
            }
-           let loc = await Location.getCurrentPositionAsync({});
-           console.log(loc)
-latitude =  loc.coords.latitude
-longitude = loc.coords.longitude
+           let locito = await Location.getCurrentPositionAsync({});
+           console.log(locito)
+latitude =  locito.coords.latitude
+longitude = locito.coords.longitude
 
            // Center the map on the location we just fetched.
 

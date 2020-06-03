@@ -2,6 +2,9 @@ import React, {Component, useState} from 'react';
 import { View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Image, TextInput, TouchableOpacity, Dimensions, AsyncStorage, KeyboardAvoidingView } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import {LinearGradient} from 'expo-linear-gradient'
+import { Camera } from 'expo-camera'
+import * as Permissions from 'expo-permissions';
+import * as ImagePicker from 'expo-image-picker';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -10,8 +13,15 @@ var email = ''
 var password = ''
 
 export default class HomeScreen extends React.Component{
+
     constructor() {
       super();
+      this.state = {
+      loading: false,
+      camera: false,
+      aight: null,
+      okman: null
+      };
     }
     static navigationOptions = {
       title: 'HomeScreen',
@@ -19,6 +29,24 @@ export default class HomeScreen extends React.Component{
 
 
     render(){
+      async function pickImage (){
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log(result);
+
+    if (!result.cancelled) {
+    this.setState({okman:result.uri});
+    }
+  };
+    async function  getRoll(){  // Camera Permission
+        const { status } = await Permissions.askAsync(Permissions.CAMERA);
+        this.setState({ aight: status === 'granted' && hi });
+      }
       const {navigate} = this.props.navigation;
     return (
         <View style={styles.container}>
@@ -32,9 +60,11 @@ export default class HomeScreen extends React.Component{
                height:height,
              }}
              />
-
-
-  }
+             <TouchableOpacity
+             style = {styles.login}
+             onPress = {() => pickImage()}
+             >
+             </TouchableOpacity>
 
 </View>
 )

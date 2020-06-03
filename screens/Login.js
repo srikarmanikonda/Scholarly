@@ -78,7 +78,7 @@ export default class Login extends React.Component{
 
                 <TouchableOpacity
                 style = {styles.login}
-                onPress = { () =>Firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then(navigate("Map"))} >
+                onPress = { () =>Firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then(navigate("HomeScreen"))} >
 
     </TouchableOpacity>
 
