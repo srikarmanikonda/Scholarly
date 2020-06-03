@@ -10,7 +10,7 @@ const width = Dimensions.get('window').width;
 global.username = ''
  global.email = ''
  global.password = ''
-
+global.activitynum = 0
 export default class Signup extends React.Component{
     constructor() {
       super();
