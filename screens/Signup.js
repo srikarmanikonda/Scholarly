@@ -101,7 +101,7 @@ export default class Signup extends React.Component{
                   email: Firebase.auth().currentUser.email,
                   password:password
 })
-).then( Firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)).then(navigate("Map"))
+).then( Firebase.auth().signOut()).then(navigate("Login"))
 }
   style = {styles.login} >
 
