@@ -55,7 +55,7 @@ export default class Signup extends React.Component{
   }}/>
 
                 <TextInput
-                  style={{ fontSize: 18.0000, width: width*0.75, height: height*0.08, marginLeft: '5%', fontFamily: 'American Typewriter',borderColor: '#fff',
+                  style={{ fontSize: 18.0000, width: width*0.75, height: height*0.08, marginLeft: '5%',borderColor: '#fff',
                   borderWidth: 2,
                   borderRadius: 20,marginVertical:"10%",top:"11%" }}
                     autoCapitalize='none'
@@ -68,7 +68,7 @@ export default class Signup extends React.Component{
 
 
               <TextInput
-                style={{ fontSize: 18.0000, width: width*0.75, height: height*0.08, marginLeft: '5%', fontFamily: 'American Typewriter',borderColor: '#fff',
+                style={{ fontSize: 18.0000, width: width*0.75, height: height*0.08, marginLeft: '5%',borderColor: '#fff',
                 borderWidth: 2,
                 borderRadius: 20,marginVertical:"10%",top:"11%" }}
                   autoCapitalize='none'
@@ -82,7 +82,7 @@ export default class Signup extends React.Component{
                 />
 
                 <TextInput
-                  style={{ fontSize: 18.0000, width:  width*0.75, height:  height*0.08, marginLeft: '5%', fontFamily: 'American Typewriter',borderColor: '#fff',
+                  style={{ fontSize: 18.0000, width:  width*0.75, height:  height*0.08, marginLeft: '5%',borderColor: '#fff',
                   borderWidth: 2,
                   borderRadius: 20,marginVertical:"10%",top:"9%" }}
                   autoCapitalize='none'
@@ -109,7 +109,7 @@ export default class Signup extends React.Component{
   <Text style =  {{  marginTop:'1.2%',
   fontSize:40,
   color:"white",
-  fontFamily:'Arial'
+
   }}
   onPress ={()=>navigate("Login")}
 

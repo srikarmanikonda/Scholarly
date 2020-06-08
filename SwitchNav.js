@@ -8,6 +8,8 @@ import { Notifications } from 'expo';
 import Login from './screens/Login'
 import Signup from './screens/Signup'
 import HomeScreen from './screens/HomeScreen'
+import ProfileScreen from './screens/Profile'
+import Settings from './screens/Settings'
 import Map from './screens/Map'
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -16,18 +18,24 @@ var email = ''
 var password = ''
 
 const AppNavigator = createSwitchNavigator({
-    Login: {
-      screen: Login
-    },
+  Profile: {
+    screen: ProfileScreen
+},
+Settings:{
+  screen: Settings
+},
+  HomeScreen:{
+    screen: HomeScreen
+  },
+
     Signup:{
       screen: Signup
     },
-    HomeScreen:{
-      screen: HomeScreen
+    Login: {
+      screen: Login
     },
-    Map:{
-      screen:Map
-    }
+    
+    
   })
 
 

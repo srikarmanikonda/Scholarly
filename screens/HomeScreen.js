@@ -14,8 +14,8 @@ var password = ''
 
 export default class HomeScreen extends React.Component{
 
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.state = {
       loading: false,
       camera: false,
@@ -62,7 +62,7 @@ export default class HomeScreen extends React.Component{
              />
              <TouchableOpacity
              style = {styles.login}
-             onPress = {() => pickImage()}
+             onPress = {()=> navigate('Profile')}
              >
              </TouchableOpacity>
 
