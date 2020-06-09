@@ -29,25 +29,9 @@ export default class HomeScreen extends React.Component{
 
 
     render(){
-      async function pickImage (){
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 1,
-    });
 
     console.log(result);
 
-    if (!result.cancelled) {
-    this.setState({okman:result.uri});
-    }
-  };
-    async function  getRoll(){  // Camera Permission
-        const { status } = await Permissions.askAsync(Permissions.CAMERA);
-        this.setState({ aight: status === 'granted' && hi });
-      }
-      const {navigate} = this.props.navigation;
     return (
         <View style={styles.container}>
         <LinearGradient
