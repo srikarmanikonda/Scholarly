@@ -101,7 +101,7 @@ export default function ProfileScreen({ navigation }) {
 
 
   const navSettings = () => {
-    navigation.navigate('Settings')
+    navigation.navigate('SampleTests')
   }
 
   const loadInBrowser = () => {
