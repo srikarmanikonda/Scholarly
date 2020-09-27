@@ -5,86 +5,42 @@ import {LinearGradient} from 'expo-linear-gradient'
 import { Camera } from 'expo-camera'
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
+import * as Font from 'expo-font'
+import { Asset } from 'expo-asset';
+import Firebase from '../components/firebase.js'
+
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
-var username = ''
-var email = ''
-var password = ''
-
-export default class HomeScreen extends React.Component{
-
-    constructor(props) {
-      super(props);
-      this.state = {
-      loading: false,
-      camera: false,
-      aight: null,
-      okman: null
-      };
-    }
-    static navigationOptions = {
-      title: 'HomeScreen',
-    }
+const rem = height/380
+const wid = width
 
 
-    render(){
-      async function pickImage (){
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 1,
-    });
-
-    console.log(result);
-
-    if (!result.cancelled) {
-    this.setState({okman:result.uri});
-    }
-  };
-    async function  getRoll(){  // Camera Permission
-        const { status } = await Permissions.askAsync(Permissions.CAMERA);
-        this.setState({ aight: status === 'granted' && hi });
-      }
-      const {navigate} = this.props.navigation;
+export default class App extends React.Component {
+  
+  render() {
     return (
-        <View style={styles.container}>
-        <LinearGradient
-     colors = {['#cc2b5e','#753a88']}
-     style={{
-               position: 'absolute',
-               left: 0,
-               right: 0,
-               top: 0,
-               height:height,
-             }}
-             />
-             <TouchableOpacity
-             style = {styles.login}
-             onPress = {()=> navigate('Profile')}
-             >
-             </TouchableOpacity>
+      <View style={styles.container}>
+      <LinearGradient
+   colors = {['#54C7E0','#3090D5','#337CD1','#00CEFC']}
+   style={{
+             position: 'absolute',
+             left: 0,
+             right: 0,
+             top: 0,
+             height:height,
+           }}
+           />
 
-</View>
-)
-}
-}
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: 'transparent',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    login:{
-  width:width*0.8,
-    backgroundColor:"maroon",
-    borderRadius:25,
-    height:height*0.09,
-    alignItems:"center",
-    justifyContent:"center",
-    top:height*0.09
-  },
-  });
+          </View>
+        )
+        }
+      }
+      const styles = StyleSheet.create({
+          container: {
+            flex: 1,
+            backgroundColor: 'transparent',
+            alignItems: 'center',
+            justifyContent: 'center',
+          },
+        });
