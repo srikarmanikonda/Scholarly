@@ -30,7 +30,7 @@ console.disableYellowBox = true;
 
 //ALL IN ACHIEVEMENTS:
 
-//wearing mask 
+//wearing mask
 //sharing info
 //visiting small businesses
 
@@ -77,7 +77,7 @@ var userDesc='I am currently a student at Vernon Hills High School and in my spa
 var x = 1.5
 
 export default function ProfileScreen({ navigation }) {
-  
+
   const [sadColor, setSad] = useState(sad)
   const [neuColor, setNeu] = useState(neu)
   const [hapColor, setHap] = useState(hap)
@@ -126,7 +126,7 @@ export default function ProfileScreen({ navigation }) {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'space-around', marginTop:x+'%' }}>
-      
+
       <StatusBar hidden/>
       <LinearGradient colors = {['#cc2b5e','#753a88']}style={{position: 'absolute',left: 0,right: 0,top: 0,height:height, marginTop:-x+'%'}}/>
       <Prompt visible={visible}titleStyle={{fontSize:20, fontWeight:'normal'}}cancelButtonTextStyle={{fontSize:20}}submitButtonTextStyle={{fontSize:20}}title="Enter a new brief description of yourself here."placeholder="Max 150 characters"
@@ -145,7 +145,7 @@ export default function ProfileScreen({ navigation }) {
             { text: "OK", }
           ],
           { cancelable: true },
-        
+
         );
       }
     }
@@ -165,15 +165,15 @@ export default function ProfileScreen({ navigation }) {
     }
     }
 />
-     
+
 
       <View style={{flexDirection:'row', justifyContent:'center', marginTop:'0%'}}>
-    
+
         <Feather name='menu' size={25} style={{color:'white', marginRight:'75%'}}/>
         <TouchableOpacity onPress={navSettings}>
         <Octicons name='gear' size={25} style={{color:'white'}} />
         </TouchableOpacity>
-        
+
       </View>
       <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center', marginTop:'0%'}}>
 
@@ -188,13 +188,13 @@ export default function ProfileScreen({ navigation }) {
         <View style={{marginRight: '2%'}} >
         </View>
         <View style={{flex: 1, marginTop:'10%'}}>
-         
+
           <Text style={{color: '#ddd', fontSize:22, marginTop: '-25%', marginLeft: '-5%', marginRight:'5%'}}>
             {name}
           </Text>
-          
+
           <Text style={{color: '#ddd', fontSize:12.5, marginTop: '0%', marginLeft: '-5%'}}>
-              
+
               {desc}
           </Text>
           <View style={{marginLeft:'-5%'}}>
@@ -203,7 +203,7 @@ export default function ProfileScreen({ navigation }) {
             <Feather name = 'edit' size = {22} style={{color:'#ccc', marginTop:'5%', marginLeft:'0%'}}/>
           </TouchableOpacity>
           </View>
-          
+
         </View>
       </View>
       <View style={{alignItems:'center'}}>
@@ -267,8 +267,8 @@ export default function ProfileScreen({ navigation }) {
         <Card style={{backgroundColor:'#cccccc'}}>
           <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
             <CardItem style={{backgroundColor:'#cccccc'}}>
-              
-              
+
+
               <Text> You have a {streak} day streak. Keep going!</Text>
             </CardItem>
           </View>
@@ -287,7 +287,7 @@ export default function ProfileScreen({ navigation }) {
             color="#cc2b7e"
             shadowColor="#ccc"
             bgColor="#e5e5e5"
-            
+
         >
           <Text style={{ fontSize: 11 }}>Volunteering goal</Text>
             <Text style={{ fontSize: 18 }}>{percPerc+'%'}</Text>
@@ -297,16 +297,16 @@ export default function ProfileScreen({ navigation }) {
             </View>
             <TouchableOpacity height ='10' onPress={()=>setVis2(true)}>
             <View style={{borderRadius: 8, paddingVertical: 4, paddingHorizontal: 4,backgroundColor: '#cc2b7e',}}>
-    
+
                 <Text style={{color: 'white',fontSize: 12,textAlign: 'center', marginTop:'0%', marginLeft:'0%'}}>
                     Change Goal
                 </Text>
-                
+
             </View>
         </TouchableOpacity>
 
         </ProgressCircle>
-        
+
       </View>
       <View style={{marginLeft:'9%', flex:1}}>
       <View style={{marginRight:'20%'}}>
@@ -318,11 +318,11 @@ export default function ProfileScreen({ navigation }) {
       <View style ={{marginRight:'20%'}}>
       <TouchableOpacity height='10' onPress={loadInBrowser}>
             <View style={{borderRadius: 8, paddingVertical: 7, paddingHorizontal: 7,backgroundColor: '#cc2b7e',}}>
-                
+
                 <Text style={{color: '#ddd',fontSize: 18,textAlign: 'center',}} >
                     Donate Now
                 </Text>
-                
+
             </View>
         </TouchableOpacity>
         </View>

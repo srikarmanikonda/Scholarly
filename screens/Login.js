@@ -1,36 +1,61 @@
 import React, {Component, useState} from 'react';
 import { View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Image, TextInput, TouchableOpacity, Dimensions, AsyncStorage, KeyboardAvoidingView } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
-import Logo from '../assets/Group_1_copy.png'
 import {LinearGradient} from 'expo-linear-gradient'
+import { Camera } from 'expo-camera'
+import * as Permissions from 'expo-permissions';
+import * as ImagePicker from 'expo-image-picker';
+import * as Font from 'expo-font'
+import { Asset } from 'expo-asset';
 import Firebase from '../components/firebase.js'
+
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
+const rem = height/380
+const wid = width
 var username = ''
 var email = ''
 var password = ''
 
 export default class Login extends React.Component{
-    constructor() {
-      super();
+  state = {
+    password: '',
+    loading: false,
+    username:''
+  }
+    constructor(props) {
+      super(props);
       this.state = {
-        email:'',
-        password:'',
+      loading: false,
+      camera: false,
+      aight: null,
+      okman: null
+      };
+    }
+
+    async componentDidMount() {
+
+        await Font.loadAsync({
+          'Baloobb': require('../assets/fonts/BalooTammudu2-Medium.ttf'),
+        });
       }
-    }
-    static navigationOptions = {
-      title: 'Login',
-    }
+
 
     render(){
+
+
+    async function  getRoll(){  // Camera Permission
+        const { status } = await Permissions.askAsync(Permissions.CAMERA);
+        this.setState({ aight: status === 'granted' && hi });
+      }
       const {navigate} = this.props.navigation;
     return (
+
         <View style={styles.container}>
 
-
         <LinearGradient
-     colors = {['#cc2b5e','#753a88']}
+     colors = {['#54C7E0','#3090D5','#337CD1','#00CEFC']}
      style={{
                position: 'absolute',
                left: 0,
@@ -39,89 +64,85 @@ export default class Login extends React.Component{
                height:height,
              }}
              />
+             <Image style={{height:height*0.3,width:width*0.6,top:"-7%"}} source={require('../assets/mainlogo2.png')}/>
+             <Text style={{ color: '#0300A3', fontSize:60, textAlign: 'center', top:height*-0.07,  fontFamily: 'Menlo' }}>Scholarly</Text>
 
+             <View style={styles.inputView} >
 
-             <Image source ={Logo}
-             style = {{   height:210,
-    width:230,
-    position:'absolute',
-    top: "4%",
-  }}/>
+                         <TextInput
+                           style={{ fontSize: 20, height: '100%', marginLeft: '5%', fontFamily: 'Menlo' }}
+                           autoCapitalize='none'
+                           autoCompleteType='off'
+                           placeholder="Email"
+                           placeholderTextColor="black"
+                           keyboardType={Platform.OS === 'ios' ? 'ascii-capable' : 'visible-password'}
+                           onChangeText={(value) => this.setState({ username
+: value })}
+                           value={this.state.username
+}
 
-              <TextInput
-                style={{ fontSize: 18.0000, width: width*0.75, height: height*0.08, marginLeft: '5%',borderColor: '#fff',
-                borderWidth: 2,
-                borderRadius: 20,marginVertical:"10%",top:"11%" }}
-                  autoCapitalize='none'
-                  placeholderTextColor = '#fff'
-                  autoCompleteType='off'
-                  placeholder="Username"
-                  onChangeText={(value) => this.setState({ email: value })}
-                  value={this.state.email}
+                         />
+                              </View>
+                         <View style={styles.inputView} >
 
-                />
+                         <TextInput
+                                             secureTextEntry={true}
 
-                <TextInput
-                  style={{ fontSize: 18.0000, width:  width*0.75, height:  height*0.08, marginLeft: '5%', borderColor: '#fff',
-                  borderWidth: 2,
-                  borderRadius: 20,marginVertical:"10%",top:"9%" }}
-                  autoCapitalize='none'
-                  autoCompleteType='off'
-                  placeholderTextColor = '#fff'
-                  placeholder="Password"
-                  onChangeText={(value) => this.setState({ password: value })}
-                  value={this.state.password}
-                  secureTextEntry={true}
+                           style={{ fontSize: 10 * rem, width: '95%', height: '100%', marginLeft: '5%', fontFamily: 'Menlo' }}
+                           autoCapitalize='none'
+                           autoCompleteType='off'
+                           placeholder="Password"
+                           placeholderTextColor="#4F4F4F"
+                           //keyboardType={Platform.OS === 'ios' ? 'ascii-capable' : 'visible-password'}
+                           onChangeText={(value) => this.setState({ password: value })}
+                           value={this.state.password}/>
+                           </View>
 
-                />
+                             <TouchableOpacity style={{  width:width*0.69,
+                                 backgroundColor:"white",
+                                 borderRadius:25,
+                                 height:height*0.09,
+                                 alignItems:"center",
+                                 justifyContent:"center",
+                                 top:"10%"
+                                           }}
+                                           onPress = { () =>  Firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).catch(function(error){alert("There has been an issue logging in. Please check that all details were entered correctly. ") })} >
 
-
-                <TouchableOpacity
-                style = {styles.login}
-                onPress = { () =>Firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then(navigate("HomeScreen"))} >
-
-    </TouchableOpacity>
-
-  <Text style =  {{  marginTop:'1.2%',
-    fontSize:40,
-    color:"white",
-  }}> Log In
-  </Text>
-
-  <TouchableOpacity
-  style = {styles.login}
-  onPress = {() => navigate("Signup")}
-  >
-  </TouchableOpacity>
-
-
-
-  <Text style =  {{  marginTop:'1.2%',
-  fontSize:40,
-  color:"white",
-  }} > Sign Up </Text>
+                                </TouchableOpacity>
+                                <Text style={{ color: '#0300A3', fontSize:50, textAlign: 'center', top:"2%",  fontFamily: 'Menlo' }}>Login</Text>
 
 </View>
+)
+}
+}
 
-    );
-    }
-    }
 
 
-    const styles = StyleSheet.create({
-        container: {
-          flex: 1,
-          backgroundColor: 'transparent',
-          alignItems: 'center',
-          justifyContent: 'center',
-        },
-        login:{
-      width:width*0.8,
-        backgroundColor:"maroon",
-        borderRadius:25,
-        height:height*0.09,
-        alignItems:"center",
-        justifyContent:"center",
-        top:height*0.09
-      },
-      });
+
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: 'transparent',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    login:{
+  width:width*0.69,
+    backgroundColor:"white",
+    borderRadius:25,
+    height:height*0.09,
+    alignItems:"center",
+    justifyContent:"center",
+    top:height*0.09
+  },
+  inputView:{
+    width:"80%",
+    backgroundColor:"white",
+    borderRadius:25,
+    height:height*0.068,
+    marginBottom:20,
+    justifyContent:"center",
+    padding:20
+  }
+  });

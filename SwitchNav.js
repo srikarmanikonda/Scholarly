@@ -18,15 +18,17 @@ var email = ''
 var password = ''
 
 const AppNavigator = createSwitchNavigator({
+  HomeScreen:{
+    screen: HomeScreen
+  },
+
   Profile: {
     screen: ProfileScreen
 },
 Settings:{
   screen: Settings
 },
-  HomeScreen:{
-    screen: HomeScreen
-  },
+
 
     Signup:{
       screen: Signup
@@ -34,8 +36,8 @@ Settings:{
     Login: {
       screen: Login
     },
-    
-    
+
+
   })
 
 

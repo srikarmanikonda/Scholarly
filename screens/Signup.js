@@ -3,13 +3,13 @@ import { View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Image, Text
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import Firebase from '../components/firebase.js'
 import {LinearGradient} from 'expo-linear-gradient'
-import Logo from '../assets/Group_1_copy.png'
+import Logo from '../assets/mainlogo2.png'
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
-global.username = ''
- global.email = ''
- global.password = ''
+global.usernames = ''
+ global.emails = ''
+ global.passwords = ''
 global.activitynum = 0
 export default class Signup extends React.Component{
     constructor() {
@@ -27,16 +27,16 @@ export default class Signup extends React.Component{
 
 
     render(){
-      username = this.state.name
-      email = this.state.email
-      password = this.state.password
+      usernames = this.state.name
+      emails = this.state.email
+      passwords = this.state.password
       const {navigate} = this.props.navigation;
     return (
         <View style={styles.container}>
 
 
         <LinearGradient
-     colors = {['#cc2b5e','#753a88']}
+     colors = {['#54C7E0','#3090D5','#337CD1','#00CEFC']}
      style={{
                position: 'absolute',
                left: 0,
@@ -48,31 +48,39 @@ export default class Signup extends React.Component{
 
 
              <Image source ={Logo}
-             style = {{   height:210,
-    width:230,
-    position:'absolute',
-    top: "4%",
+             style = {{height:height*0.3,width:width*0.6,top:"-3%",
   }}/>
-
+<View style = {{  width:"80%",
+  backgroundColor:"white",
+  borderRadius:25,
+  height:height*0.068,
+  marginBottom:20,
+      top:0.06*height,
+  justifyContent:"center",
+  padding:20}}>
                 <TextInput
-                  style={{ fontSize: 18.0000, width: width*0.75, height: height*0.08, marginLeft: '5%',borderColor: '#fff',
-                  borderWidth: 2,
-                  borderRadius: 20,marginVertical:"10%",top:"11%" }}
+                  style={{  fontSize: 20, height: '100%', marginLeft: '5%', fontFamily: 'Menlo'}}
                     autoCapitalize='none'
-                    placeholderTextColor = '#fff'
+                    placeholderTextColor = 'black'
                     autoCompleteType='off'
                     placeholder="Name"
                     keyboardType={Platform.OS === 'ios' ? 'ascii-capable' : 'visible-password'}
                     onChangeText={(value) => this.setState({ name: value })}
                     value={this.state.name}/>
+</View>
 
-
+  <View style = {{  width:"80%",
+    backgroundColor:"white",
+    borderRadius:25,
+    height:height*0.068,
+    marginBottom:height*0.064,
+    top:0.12*height,
+    justifyContent:"center",
+    padding:20}}>
               <TextInput
-                style={{ fontSize: 18.0000, width: width*0.75, height: height*0.08, marginLeft: '5%',borderColor: '#fff',
-                borderWidth: 2,
-                borderRadius: 20,marginVertical:"10%",top:"11%" }}
+                style={{ }}
                   autoCapitalize='none'
-                  placeholderTextColor = '#fff'
+                  placeholderTextColor = 'black'
                   autoCompleteType='off'
                   placeholder="Email"
                   keyboardType={Platform.OS === 'ios' ? 'ascii-capable' : 'visible-password'}
@@ -80,35 +88,60 @@ export default class Signup extends React.Component{
                   value={this.state.email}
 
                 />
+</View>
+<View style = {{  width:"80%",
+  backgroundColor:"white",
+  borderRadius:25,
+  height:height*0.068,
+      top:0.14*height,
+  marginBottom:20,
+  justifyContent:"center",
+  padding:20}}>
 
                 <TextInput
-                  style={{ fontSize: 18.0000, width:  width*0.75, height:  height*0.08, marginLeft: '5%',borderColor: '#fff',
-                  borderWidth: 2,
-                  borderRadius: 20,marginVertical:"10%",top:"9%" }}
+                  style={{  fontSize: 20, height: '100%', marginLeft: '5%', fontFamily: 'Menlo' }}
                   autoCapitalize='none'
                   autoCompleteType='off'
-                  placeholderTextColor = '#fff'
+                  placeholderTextColor = 'black'
                   placeholder="Password"
                   onChangeText={(value) => this.setState({ password: value })}
                   value={this.state.password}
                   secureTextEntry={true}
 
                 />
+                </View>
   <TouchableOpacity
+  onPress ={() =>
+                 {Firebase.auth().createUserWithEmailAndPassword(this.state.emails,this.state.passwords).catch(function(error){alert("There has been an error in signing up your account. Please check all fields again carefully and try again",console.log(error))}).then(function () {
+
+                   Firebase.database().ref('users/' + Firebase.auth().currentUser.uid).set({
+                     username:usernam,
+                     email: Firebase.auth().currentUser.email,
+                     password :passwords,
+
+
+                   })
+
+                 }).then(Alert.alert("Thanks for signing up!"), ("Your account has been created and will be approved soon!")).then(navigate("Home"))
+            }
+
+
+        }
   onPress ={()=>  Firebase.auth().createUserWithEmailAndPassword(this.state.email,this.state.password).then(
                 Firebase.database().ref('users/' + Firebase.auth().currentUser.uid).set({
-                  name:username,
+                  name:usernames,
                   email: Firebase.auth().currentUser.email,
-                  password:password
+                  password:passwords
 })
-).then( Firebase.auth().signOut()).then(navigate("Login"))
+).then(navigate("HomeScreen"))
 }
   style = {styles.login} >
 
   </TouchableOpacity>
-  <Text style =  {{  marginTop:'1.2%',
+  <Text style =  {{  marginTop:'11.2%',
   fontSize:40,
-  color:"white",
+  color:"black",
+  top:height*0.06
 
   }}
   onPress ={()=>navigate("Login")}
@@ -130,11 +163,11 @@ export default class Signup extends React.Component{
         },
         login:{
       width:width*0.8,
-        backgroundColor:"maroon",
+        backgroundColor:"white",
         borderRadius:25,
         height:height*0.09,
         alignItems:"center",
         justifyContent:"center",
-        top:height*0.09
+        top:height*0.19
       },
       });
