@@ -22,9 +22,19 @@ var email = ''
 var password = ''
 
 const AppNavigator = createSwitchNavigator({
+  HomeScreen:{
+    screen: HomeScreen
+  },
+  Login: {
+    screen: Login
+  },
+  Signup:{
+    screen: Signup
+  },
+
 
   TestingResources: {
-    screen:Wellness
+    screen:TestingResources
   },
 
   TestLoc: {
@@ -34,9 +44,7 @@ const AppNavigator = createSwitchNavigator({
   PracTests: {
     screen: PracTest
   },
-  HomeScreen:{
-    screen: HomeScreen
-  },
+
 
   Profile: {
     screen: ProfileScreen
@@ -46,14 +54,11 @@ const AppNavigator = createSwitchNavigator({
 Settings:{
   screen: Settings
 },
+Wellness:{
+  screen:Wellness
+}
 
 
-    Signup:{
-      screen: Signup
-    },
-    Login: {
-      screen: Login
-    },
 
 
   })

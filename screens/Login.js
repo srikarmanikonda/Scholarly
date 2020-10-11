@@ -111,6 +111,14 @@ export default class Login extends React.Component{
                                 </TouchableOpacity>
                                 <Text style={{ color: '#0300A3', fontSize:50, textAlign: 'center', top:"2%",  fontFamily: 'Menlo' }}>Login</Text>
 
+                                               <Text style={{color: 'white', fontSize:15,fontFamily:'Menlo',top:"-15%", textShadowColor:'black', textShadowRadius:10, textShadowOffset:{width: -1, height: 1}}}
+                                               onPress={() =>navigate('Signup')}> Sign up</Text>
+
+
+                                                              <Text style={{color: 'white', fontSize:15,fontFamily:'Menlo',top:"-13%", textShadowColor:'black', textShadowRadius:10, textShadowOffset:{width: -1, height: 1}}}
+                                                              onPress={() =>navigate('Signup')}>Forgot your password?</Text>
+
+
 </View>
 )
 }
