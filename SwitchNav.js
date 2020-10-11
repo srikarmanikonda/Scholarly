@@ -14,6 +14,7 @@ import TestLocator from './screens/TestLoc'
 import Map from './screens/Map'
 import TestingResources from './screens/TestingResources';
 import PracTest from './screens/PracTests';
+import Wellness from'./screens/wellness';
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 var username = ''
@@ -23,7 +24,7 @@ var password = ''
 const AppNavigator = createSwitchNavigator({
 
   TestingResources: {
-    screen: TestingResources
+    screen:Wellness
   },
 
   TestLoc: {
@@ -40,8 +41,8 @@ const AppNavigator = createSwitchNavigator({
   Profile: {
     screen: ProfileScreen
 },
-  
-  
+
+
 Settings:{
   screen: Settings
 },

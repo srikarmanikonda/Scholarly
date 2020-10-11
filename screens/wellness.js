@@ -1,4 +1,4 @@
-mport React from 'react';
+import React from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import { StyleSheet, Text, View, Dimensions, Image, TouchableOpacity, ImageBackground } from 'react-native';
 
@@ -17,7 +17,7 @@ export default class App extends React.Component {
     let result = await WebBrowser.openBrowserAsync('https://healthy.kaiserpermanente.org/oregon-washington/health-wellness/mental-health/tools-resources/stress-management');
   }
   two = async () => {
-    let result = await WebBrowser.openBrowserAsync('https://www.fec.gov/help-candidates-and-committees/guides/');
+    let result = await WebBrowser.openBrowserAsync('https://www.mentalhealth.gov/');
   }
   three = async () => {
     let result = await WebBrowser.openBrowserAsync('https://www.eac.gov/election-officials/voting-accessibility');
@@ -71,7 +71,7 @@ export default class App extends React.Component {
 
             </TouchableOpacity>
           </View>
-        </ImageBackground>
+
       </View>
 
     )
