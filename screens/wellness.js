@@ -1,6 +1,7 @@
 import React from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import { StyleSheet, Text, View, Dimensions, Image, TouchableOpacity, ImageBackground } from 'react-native';
+import {LinearGradient} from 'expo-linear-gradient'
 
 const entireScreenHeight = Dimensions.get('window').height;
 const rem = entireScreenHeight / 380;
@@ -36,38 +37,38 @@ export default class App extends React.Component {
              left: 0,
              right: 0,
              top: 0,
-             height:height,
+             height:"100%",
            }}
            />
           <View style={{ alignItems: 'center', height: '50%' }}>
-            <Text style={{ fontWeight: 'bold', fontSize: Math.min(32.5 * rem, 40.5 * wid), color: 'white', top: entireScreenWidth * -0.35, right: entireScreenWidth * 0.01 }}>Voter Info</Text>
+            <Text style={{ fontWeight: 'bold', fontSize: Math.min(32.5 * rem, 34.5 * wid), color: 'white', top: entireScreenWidth * -0.35, right: entireScreenWidth * 0.01 }}> Wellness resources</Text>
 
             <TouchableOpacity
               style={styles.login}
               onPress={() => this.one()}>
-              <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 21.5 * wid), color: 'white', top: entireScreenWidth * 0.07, right: entireScreenWidth * 0.01 }}>Voter Registration</Text>
-              <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.31, top: entireScreenWidth * -0.03 }} source={require('../assets/mental')} resizeMode='contain'></Image>
+              <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 21.5 * wid), color: 'white', top: entireScreenWidth * 0.07, right: entireScreenWidth * 0.01 }}>Mental health</Text>
+              <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.31, top: entireScreenWidth * -0.03 }} source={require('../assets/mental.png')} resizeMode='contain'></Image>
 
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.login2}
               onPress={() => this.two()}>
-              <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 21.5 * wid,), color: 'white', top: entireScreenWidth * 0.07 }}>FEC Guidelines</Text>
+              <Text style={{ fontWeight: 'bold', fontSize: Math.min(9.5 * rem, 17.5 * wid,), color: 'white', top: entireScreenWidth * 0.07 }}>Physical health at home</Text>
               <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.31, top: entireScreenWidth * -0.03 }} source={require('../assets/physical.png')} resizeMode='contain'></Image>
 
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.login3}
               onPress={() => this.three()}>
-              <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 21.5 * wid), color: 'white', top: entireScreenWidth * 0.07 }}>Voting Assistance</Text>
-              <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.31, top: entireScreenWidth * -0.03 }} source={require('../assets/studnetwell.png')} resizeMode='contain'></Image>
+              <Text style={{ fontWeight: 'bold', fontSize: Math.min(10.5 * rem, 19.5 * wid), color: 'white', top: entireScreenWidth * 0.07 }}>  E-learning wellness</Text>
+              <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.33, top: entireScreenWidth * -0.03 }} source={require('../assets/studnetwell.png')} resizeMode='contain'></Image>
 
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.login4}
               onPress={() => this.four()}>
-              <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 21.5 * wid), color: 'white', top: entireScreenWidth * 0.07 }}>Elections near me</Text>
-              <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.31, top: entireScreenWidth * -0.03 }} source={require('../assets/flag.png')} resizeMode='contain'></Image>
+              <Text style={{ fontWeight: 'bold', fontSize: Math.min(8.5 * rem, 15 * wid), color: 'white', top: entireScreenWidth * 0.07 }}>Social and Isolation text line </Text>
+              <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.33, top: entireScreenWidth * -0.03 }} source={require('../assets/studnetwell.png')} resizeMode='contain'></Image>
 
             </TouchableOpacity>
           </View>
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
   },
   login: {
     width: entireScreenWidth * 0.8,
-    backgroundColor: "maroon",
+    backgroundColor:  "#3773BB",
     borderRadius: 25,
     height: entireScreenHeight * 0.09,
     alignItems: "center",
@@ -108,7 +109,7 @@ const styles = StyleSheet.create({
   },
   login3: {
     width: entireScreenWidth * 0.8,
-    backgroundColor: "maroon",
+    backgroundColor: "#3773BB",
     borderRadius: 25,
     height: entireScreenHeight * 0.09,
     alignItems: "center",
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
   },
   login4: {
     width: entireScreenWidth * 0.8,
-    backgroundColor: "maroon",
+    backgroundColor: "#3773BB",
     borderRadius: 25,
     height: entireScreenHeight * 0.09,
     alignItems: "center",
