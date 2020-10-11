@@ -20,7 +20,7 @@ export default class App extends React.Component {
     let result = await WebBrowser.openBrowserAsync('https://www.mentalhealth.gov/');
   }
   three = async () => {
-    let result = await WebBrowser.openBrowserAsync('https://www.eac.gov/election-officials/voting-accessibility');
+    let result = await WebBrowser.openBrowserAsync('https://www.nhlbi.nih.gov/health/educational/wecan/get-active/activity-plan.htm');
   }
   four = async () => {
     let result = await WebBrowser.openBrowserAsync('https://www.fec.gov/data/elections/?state=&cycle=2020&election_full=true');
@@ -46,21 +46,21 @@ export default class App extends React.Component {
               style={styles.login}
               onPress={() => this.one()}>
               <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 21.5 * wid), color: 'white', top: entireScreenWidth * 0.07, right: entireScreenWidth * 0.01 }}>Voter Registration</Text>
-              <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.31, top: entireScreenWidth * -0.03 }} source={require('../assets/ID.png')} resizeMode='contain'></Image>
+              <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.31, top: entireScreenWidth * -0.03 }} source={require('../assets/mental')} resizeMode='contain'></Image>
 
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.login2}
               onPress={() => this.two()}>
               <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 21.5 * wid,), color: 'white', top: entireScreenWidth * 0.07 }}>FEC Guidelines</Text>
-              <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.31, top: entireScreenWidth * -0.03 }} source={require('../assets/FEC_logo.png')} resizeMode='contain'></Image>
+              <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.31, top: entireScreenWidth * -0.03 }} source={require('../assets/physical.png')} resizeMode='contain'></Image>
 
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.login3}
               onPress={() => this.three()}>
               <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 21.5 * wid), color: 'white', top: entireScreenWidth * 0.07 }}>Voting Assistance</Text>
-              <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.31, top: entireScreenWidth * -0.03 }} source={require('../assets/hand.png')} resizeMode='contain'></Image>
+              <Image style={{ width: '80%', height: '80%', right: entireScreenWidth * -0.31, top: entireScreenWidth * -0.03 }} source={require('../assets/studnetwell.png')} resizeMode='contain'></Image>
 
             </TouchableOpacity>
             <TouchableOpacity
