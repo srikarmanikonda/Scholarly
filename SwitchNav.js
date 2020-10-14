@@ -15,6 +15,8 @@ import Map from './screens/Map'
 import TestingResources from './screens/TestingResources';
 import PracTest from './screens/PracTests';
 import Wellness from'./screens/wellness';
+import Scholarships from './screens/Scholarships'
+
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 var username = ''
@@ -31,7 +33,9 @@ const AppNavigator = createSwitchNavigator({
   Signup:{
     screen: Signup
   },
-
+  Scholarships: {
+    screen: Scholarships
+  },
 
   TestingResources: {
     screen:TestingResources
