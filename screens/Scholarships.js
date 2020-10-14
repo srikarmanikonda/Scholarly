@@ -14,7 +14,7 @@ const wid = entireScreenWidth / 380;
 let first = true;
 let first2 = true;
 
-var  data  = [{
+var  predata  = [{
     name: "Srikar Manikonda $1000 grant",
     id: "100",
     link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -28,6 +28,7 @@ var  data  = [{
     deadline:"tommorrow"
   }]
 
+var fullData=  [];
 
 
 export default class App extends React.Component {
@@ -38,9 +39,9 @@ export default class App extends React.Component {
     // Ignore dynamic type scaling on iOS
     Text.defaultProps.allowFontScaling = false;
     this.state = {
-      data: data,
+      data: predata,
       spinner: false,
-      search: ''
+      search: '',
     };
 
 
@@ -48,8 +49,21 @@ export default class App extends React.Component {
   }
 
   updateSearch = (search) => {
+      fullData = []
     this.setState({ search });
-  };
+    predata.forEach((datas) =>
+    {
+        for (let x in datas) {
+            if(datas[x].includes(search))
+            {
+                fullData.push(datas)
+                break;
+            }
+          }
+    });
+    console.log( fullData);
+    this.state.data = fullData;
+};
     
    edit(item){
 
@@ -99,6 +113,27 @@ export default class App extends React.Component {
       );
     }
   };
+  renderSeparator = () => {
+    return (
+      <View
+        style={{
+          height: 1,
+          width: "86%",
+          backgroundColor: "#CED0CE",
+          marginLeft: "14%"
+        }}
+      />
+    );
+  };
+  renderHeader = () => {
+    const { search } = this.state;
+
+    return <SearchBar
+    placeholder="Type Here..."
+    onChangeText={this.updateSearch}
+    value={search}
+  />;
+  };
   static navigationOptions = { headerMode: 'none', gestureEnabled: false };
   render() {
     //// console.log(global.drives)
@@ -106,7 +141,6 @@ export default class App extends React.Component {
       this.props.navigation.navigate('HomeScreen')
     }
     
-    const { search } = this.state;
 
     
   //  // console.log(JSON.stringify(global.drives))
@@ -126,7 +160,7 @@ export default class App extends React.Component {
 
         <View style={styles.container}>
 
-            
+
           <View style={styles.navBar}>
           <TouchableOpacity
                
@@ -152,18 +186,17 @@ export default class App extends React.Component {
        
           <ImageBackground source={require('../assets/login.png')} style={styles.image}>
               
-          <SearchBar
-        placeholder="Type Here..."
-        onChangeText={this.updateSearch}
-        value={search}
-      />
             <View style={{ flex: 1, width: '90%', alignItems: 'center' }}>
               </View>
             <View style={{ width: '100%', flex: 6 }}>
+
               <FlatList style={{ width: '100%' }}
+
                 data={this.state.data}
                 renderItem={this._renderItem}
                 keyExtractor={item => item.id}
+                ListHeaderComponent={this.renderHeader}
+
                 scrollEnabled={!this.state.isSwiping}
               // stickyHeaderIndices={this.state.stickyHeaderIndices}
               />
