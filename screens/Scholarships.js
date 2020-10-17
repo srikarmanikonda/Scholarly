@@ -73,9 +73,9 @@ export default class App extends React.Component {
 
   _renderItem = ({ item }) => {
     const rightButtons = [
-      <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.edit(item)}> 
+      <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.edit(item)}>
       <Text style={{ fontWeight: 'bold', color: 'blue', paddingLeft: entireScreenHeight / 30 }}>Apply</Text>
-      
+
   </TouchableHighlight>
  ,
     ];
@@ -114,7 +114,7 @@ export default class App extends React.Component {
       );
     }
   };
-  
+
   renderHeader = () => {
     const { search } = this.state;
 
@@ -151,7 +151,7 @@ export default class App extends React.Component {
         <View style={styles.container}>
 
 
-          
+
         <LinearGradient
    colors = {['#54C7E0','#3090D5','#337CD1','#00CEFC']}
    style={{
@@ -189,7 +189,7 @@ export default class App extends React.Component {
               </View>
             <View style={{ width: '100%', flex: 6 }}>
               <FlatList style={{ width: '100%' }}
-                  marginTop ={'-15%'}
+                  marginTop ={'-24%'}
 
                 data={this.state.data}
                 renderItem={this._renderItem}

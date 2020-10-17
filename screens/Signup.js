@@ -55,7 +55,7 @@ export default class Signup extends React.Component{
   borderRadius:25,
   height:height*0.068,
   marginBottom:20,
-      top:0.06*height,
+      top:-0.04*height,
   justifyContent:"center",
   padding:20}}>
                 <TextInput
@@ -74,7 +74,7 @@ export default class Signup extends React.Component{
     borderRadius:25,
     height:height*0.068,
     marginBottom:height*0.064,
-    top:0.12*height,
+    top:0.02*height,
     justifyContent:"center",
     padding:20}}>
               <TextInput
@@ -93,7 +93,7 @@ export default class Signup extends React.Component{
   backgroundColor:"white",
   borderRadius:25,
   height:height*0.068,
-      top:0.14*height,
+      top:0.07*height,
   marginBottom:20,
   justifyContent:"center",
   padding:20}}>
@@ -141,7 +141,7 @@ export default class Signup extends React.Component{
   <Text style =  {{  marginTop:'11.2%',
   fontSize:40,
   color:"black",
-  top:height*0.06
+  top:height*-0.02
 
   }}
   onPress ={()=>navigate("Login")}
