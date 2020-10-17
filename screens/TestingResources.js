@@ -33,6 +33,10 @@ export default class TestingResources extends React.Component{
         title: 'TestingResources',
       }
 
+
+
+//beginning of font code
+
       state = {
         loaded: false
       };
@@ -44,20 +48,23 @@ export default class TestingResources extends React.Component{
         this.setState({ loaded: true });
       };
     
-    // call _loadFontsAsync 
       componentDidMount() {
         this._loadFontsAsync();
       }
 
 
-// THIS WILL HAVE BUTTONS SIMILAR TO THAT IN THE HOME SCREEN which will lead to other individual screens
-    
+
+
 
     render(){
         const {navigate} = this.props.navigation;
+
+        //MAKE SURE U HAVE THIS IF STATEMENT
         if (!this.state.loaded) {
           return <AppLoading />;
         }
+
+        //end
         return(
             <View style ={{flex:1,justifyContent:'center',alignItems:'center'}}>
                
