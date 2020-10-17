@@ -61,7 +61,10 @@ export default class TestingResources extends React.Component{
 
         //MAKE SURE U HAVE THIS IF STATEMENT
         if (!this.state.loaded) {
-          return <AppLoading />;
+          return (
+          <View>
+            <StatusBar hidden />
+          </View>)
         }
 
         //end
