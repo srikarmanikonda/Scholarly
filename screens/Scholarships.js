@@ -28,6 +28,12 @@ var  predata  = [{
     link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     description: " stahp",
     deadline:"tommorrow"
+  },{
+    name: "test",
+    id: "9999",
+    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    description: " stahp",
+    deadline:"tommorrow"
   }]
 
 var fullData=  [];
@@ -76,8 +82,7 @@ export default class App extends React.Component {
       <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.edit(item)}> 
       <Text style={{ fontWeight: 'bold', color: 'blue', paddingLeft: entireScreenHeight / 30 }}>Apply</Text>
       
-  </TouchableHighlight>
- ,
+  </TouchableHighlight>,
     ];
     if (item.header) {
 
@@ -101,7 +106,7 @@ export default class App extends React.Component {
       }
       return (
         <Swipeable rightButtons={rightButtons} rightButtonWidth={entireScreenWidth / 5} bounceOnMount={f}>
-          <ListItem style={{ marginLeft: 0, backgroundColor: 'transparent' }}>
+          <ListItem style={{ marginLeft: 0, backgroundColor: 'transparent' , elevation: 5}}>
             <Body>
               <Text style={{ fontWeight: 'bold', flex: 1, color: 'black' }}>{item.name}</Text>
               <Text style={{  flex: 1, color: 'black' }}>{item.description} </Text>
@@ -130,9 +135,6 @@ export default class App extends React.Component {
     const onPress = () => {
       this.props.navigation.navigate('HomeScreen')
     }
-
-
-
   //  // console.log(JSON.stringify(global.drives))
     const entireScreenHeight = Dimensions.get('window').height;
     const rem = entireScreenHeight / 380;
@@ -150,8 +152,6 @@ export default class App extends React.Component {
 
         <View style={styles.container}>
 
-
-          
         <LinearGradient
    colors = {['#54C7E0','#3090D5','#337CD1','#00CEFC']}
    style={{
@@ -168,7 +168,6 @@ export default class App extends React.Component {
 
                 onPress={onPress}
                 disabled={this.state.loading}
-
               >
                 <Image source={require('../assets/logout.png')} style={{
                   height: 60,
@@ -181,7 +180,6 @@ export default class App extends React.Component {
                   width: 50,
                   marginRight:140
                 }}></Image>
-
 
         </View>
 
