@@ -4,6 +4,7 @@ import { Text, ListItem, Left, Body, Icon, Right, Title } from "native-base";
 import Swipeable from 'react-native-swipeable-row';
 import { SearchBar } from 'react-native-elements';
 import moment from "moment";
+import * as WebBrowser from 'expo-web-browser';
 
 
 
@@ -17,7 +18,7 @@ let first2 = true;
 var  predata  = [{
     name: "CLC",
     id: "1",
-    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    link: "https://www.clcillinois.edu/",
     description: "A community college for the families of vernon hills ",
     appdeadline:"12/19/20"
   },{
@@ -28,22 +29,36 @@ var  predata  = [{
     appdeadline:"12/20/20"
   },
   {
-    name: "Northwestern University",
+    name: "Ohio State University",
     id: "3",
     link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     description: "ferda kyles",
     appdeadline:"12/20/20"
   },
   {
-    name: "University of Illinois at Urbana-Champaign",
+    name: "Harvard University",
     id: "4",
     link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     description: "ferda kyles",
     appdeadline:"12/20/20"
   },
   {
-    name: "Benedictine University",
+    name: "Northwestern University",
     id: "5",
+    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    description: "ferda kyles",
+    appdeadline:"12/20/20"
+  },
+  {
+    name: "University of Illinois at Urbana-Champaign",
+    id: "6",
+    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    description: "ferda kyles",
+    appdeadline:"12/20/20"
+  },
+  {
+    name: "Benedictine University",
+    id: "7",
     link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     description: "ferda kyles",
     appdeadline:"12/20/20"
@@ -92,16 +107,15 @@ export default class App extends React.Component {
     this.state.data = fullData;
 };
 
-   edit(item){
+     one = async (item) => {
+       let result = await WebBrowser.openBrowserAsync(item.link);
+     }
 
 
-      Linking.openURL(item.link);
-
-  }
 
   _renderItem = ({ item }) => {
     const rightButtons = [
-      <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.edit(item)}><Text style={{ color: 'white', paddingLeft: entireScreenHeight / 30 }}>Apply</Text></TouchableHighlight>,
+      <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.one(item)}><Text style={{ color: 'white', paddingLeft: entireScreenHeight / 30 }}>Apply</Text></TouchableHighlight>,
     ];
     if (item.header) {
 
