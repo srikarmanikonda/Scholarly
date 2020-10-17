@@ -25,7 +25,7 @@ var  predata  = [{
     name: "Arizona State University",
     id: "2",
     link: "https://admission.asu.edu/apply",
-    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: 22/1050\n",
     appdeadline:"12/20/20"
   },
   {
@@ -39,7 +39,7 @@ var  predata  = [{
     name: "Harvard University",
     id: "4",
     link: "https://college.harvard.edu/admissions/apply",
-    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: 34/1490\n",
     appdeadline:"12/20/20"
   },
   {
@@ -90,21 +90,21 @@ var  predata  = [{
     name: "Illinois State University",
     id: "11",
         link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Remote\n Average ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },
   {
     name: "Michigan State University",
     id: "12",
         link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate: 78 %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },
   {
     name: "Case Western Reserve University",
     id: "13",
         link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:29 %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },
 
@@ -113,21 +113,21 @@ var  predata  = [{
     name: "Yale University",
     id: "15",
         link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): Y\nLetters of reccomendation required(y/n): Y\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): Y\n Acceptance Rate: 6.3 %\nIn-person, hybrid, or remote: Remote\nAverage ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },
   {
     name: "Auburn University",
     id: "16",
         link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): Y\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\nIn-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },
   {
     name: "Iowa State University",
     id: "17",
         link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): Y\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): Y\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: In-person\n Average ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },
   {
