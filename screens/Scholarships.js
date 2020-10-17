@@ -24,12 +24,12 @@ var  predata  = [{
     deadline:"today"
   },{
     name: "test",
-    id: "9999",
+    id: "300",
     link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    description: " stahp",
+    description: " test",
     deadline:"tommorrow"
   },{
-    name: "test",
+    name: "hello",
     id: "9999",
     link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     description: " stahp",
@@ -55,6 +55,7 @@ export default class App extends React.Component {
 
   updateSearch = (search) => {
       fullData = []
+
     this.setState({ search });
     predata.forEach((datas) =>
     {
@@ -66,8 +67,10 @@ export default class App extends React.Component {
             }
           }
     });
-    console.log( fullData);
+    //console.log( fullData);
+    console.log(predata);
     this.state.data = fullData;
+
 };
 
    edit(item){

@@ -65,7 +65,7 @@ var  predata  = [{
   },
   {
     name: "Purdue University",
-    id: "6",
+    id: "8",
      description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },]
