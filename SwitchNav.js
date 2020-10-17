@@ -19,7 +19,7 @@ import PracTest from './screens/PracTests';
 import ACTTestLocMAIN from './screens/ACTTestLocMAIN';
 import SATTestLocMAIN from './screens/SATTestLocMAIN';
 import ACTCustom from './screens/ACTCustom'
-=======
+
 import Wellness from'./screens/wellness';
 import Scholarships from './screens/Scholarships'
 import College from'./screens/colegio'
@@ -33,7 +33,7 @@ var password = ''
 
 const AppNavigator = createSwitchNavigator({
 
-  
+
   HomeScreen:{
     screen: HomeScreen
   },
@@ -74,7 +74,7 @@ const AppNavigator = createSwitchNavigator({
   PracTests: {
     screen: PracTest
   },
-  
+
 
   Profile: {
     screen: ProfileScreen
