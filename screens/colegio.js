@@ -19,7 +19,7 @@ var  predata  = [{
     name: "CLC",
     id: "1",
     link: "https://www.clcillinois.edu/",
-    description: "A community college for the families of vernon hills ",
+    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N ",
     appdeadline:"12/19/20"
   },{
     name: "Arizona State University",
