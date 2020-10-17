@@ -299,7 +299,7 @@ export default class App extends React.Component {
               </View>
             <View style={{ width: '100%', flex: 8 }}>
 
-              <FlatList style={{ width: '100%',height:"100%",marginTop:"-12%" }}
+              <FlatList style={{ width: '100%',height:"100%",marginTop:"-18.3%" }}
 
                 data={this.state.data}
                 renderItem={this._renderItem}
