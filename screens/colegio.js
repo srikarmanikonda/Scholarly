@@ -82,7 +82,7 @@ export default class App extends React.Component {
 
         <ListItem itemDivider >
           <Body style={{ marginRight: 0, alignItems: 'center' }}>
-            <Text style={{ fontWeight: "bold" }}>
+            <Text style={{ fontWeight: "bold",font:'Arial' }}>
              {moment(item.date, 'MM-DD-YYYY').format('MMMM Do, YYYY')}
             </Text>
           </Body>

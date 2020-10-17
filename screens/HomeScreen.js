@@ -49,13 +49,13 @@ export default class App extends React.Component {
                                elevation: 8,
                              }} onPress={() =>navigate('TestingResources')}>
                                <View
-                                 style={{ height: '100%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#3773BB' }}>
+                                 style={{ height: '90%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#3773BB',top:height*0.1 }}>
                                  <View style={{ flex: 0.2, width: '100%' }}></View>
                                  <View style={{ flex: 2, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
                                    <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>Testing</Text>
                                  </View>
                                  <View style={{ flex: 3, width: '100%' }}>
-                                   <Image style={{ width: '100%', height: '100%' }} source={require('../assets/mental.png')} resizeMode='contain'></Image>
+                                   <Image style={{ width: '100%', height: '100%' }} source={require('../assets/download-3.png')} resizeMode='contain'></Image>
                                  </View>
                                  <View style={{ flex: 1, width: '100%' }}></View>
                                </View>
@@ -76,13 +76,13 @@ export default class App extends React.Component {
                                elevation: 8,
                              }} onPress={() => this.props.navigation.navigate('Scholarships')}>
                                <View
-                                 style={{ height: '100%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#B22234' }}>
+                                 style={{ height: '90%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#B22234',top:height*0.1 }}>
                                  <View style={{ flex: 0.2, width: '100%' }}></View>
                                  <View style={{ flex: 2, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
                                    <Text onPress={() => this.props.navigation.navigate('Chat')} style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>Scholarships</Text>
                                  </View>
                                  <View style={{ flex: 3, width: '100%' }}>
-                                   <Image style={{ width: '100%', height: '100%' }} source={require('../assets/mental.png')} resizeMode='contain'></Image>
+                                   <Image style={{ width: '100%', height: '100%' }} source={require('../assets/scholar.png')} resizeMode='contain'></Image>
                                  </View>
                                  <View style={{ flex: 1, width: '100%' }}></View>
                                </View>
@@ -105,7 +105,7 @@ export default class App extends React.Component {
                                elevation: 8,
                              }} onPress={() =>navigate('Wellness')}>
                                <View
-                                 style={{ height: '100%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#B22234' }}>
+                                 style={{ height: '90%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#B22234' }}>
                                  <View style={{ flex: 0.2, width: '100%' }}></View>
                                  <View style={{ flex: 2, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
                                    <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>Wellness</Text>
@@ -130,16 +130,16 @@ export default class App extends React.Component {
                                shadowRadius: 3.65,
 
                                elevation: 8,
-                             }} onPress={() => navigate('wellness')}>
+                             }} onPress={() => navigate('colegio')}>
 
                                <View
-                                 style={{ height: '100%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#3773BB' }}>
+                                 style={{ height: '90%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#3773BB' }}>
                                  <View style={{ flex: 0.2, width: '100%' }}></View>
                                  <View style={{ flex: 2, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
-                                   <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>Wellness</Text>
+                                   <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>College</Text>
                                  </View>
                                  <View style={{ flex: 3, width: '100%' }}>
-                                   <Image style={{ width: '100%', height: '100%' }} source={require('../assets/mental.png')} resizeMode='contain'></Image>
+                                   <Image style={{ width: '100%', height: '100%' }} source={require('../assets/cole.png')} resizeMode='contain'></Image>
                                  </View>
                                  <View style={{ flex: 1, width: '100%' }}></View>
                                </View>
