@@ -17,8 +17,10 @@ const wid = width
 
 
 export default class App extends React.Component {
-  
+
   render() {
+    const {navigate} = this.props.navigation;
+
     return (
       <View style={styles.container}>
       <LinearGradient
@@ -31,8 +33,126 @@ export default class App extends React.Component {
              height:height,
            }}
            />
+           <View style={{ flex: 3, width: '90%' }}>
+                         <View style={{ width: '100%', flex: 1, flexDirection: 'row' }}>
+                           <View style={{
+                             flex: 1, height: '85%',
+                           }}>
+                             <TouchableOpacity style={{
+                               shadowOffset: {
+                                 width: 0,
+                                 height: 4,
+                               },
+                               shadowOpacity: 0.30,
+                               shadowRadius: 3.65,
 
-          </View>
+                               elevation: 8,
+                             }} onPress={() =>navigate('TestingResources')}>
+                               <View
+                                 style={{ height: '75%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#3773BB',top:height*0.23 }}>
+                                 <View style={{ flex: 0.2, width: '100%' }}></View>
+                                 <View style={{ flex: 2, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                                   <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>Testing</Text>
+                                 </View>
+                                 <View style={{ flex: 3, width: '100%' }}>
+                                   <Image style={{ width: '100%', height: '100%' }} source={require('../assets/download-3.png')} resizeMode='contain'></Image>
+                                 </View>
+                                 <View style={{ flex: 1, width: '100%' }}></View>
+                               </View>
+                             </TouchableOpacity>
+                           </View>
+                           <View style={{ flex: 0.15, height: '95%' }}></View>
+                           <View style={{
+                             flex: 1, height: '85%',
+                           }}>
+                             <TouchableOpacity style={{
+                               shadowOffset: {
+                                 width: 0,
+                                 height: 4,
+                               },
+                               shadowOpacity: 0.30,
+                               shadowRadius: 3.65,
+
+                               elevation: 8,
+                             }} onPress={() => navigate('Scholarships')}>
+                               <View
+                                 style={{ height: '75%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#B22234',top:height*0.23 }}>
+                                 <View style={{ flex: 0.2, width: '100%' }}></View>
+                                 <View style={{ flex: 2, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                                   <Text onPress={() => this.props.navigation.navigate('Chat')} style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>Scholarships</Text>
+                                 </View>
+                                 <View style={{ flex: 3, width: '100%' }}>
+                                   <Image style={{ width: '100%', height: '100%' }} source={require('../assets/scholar.png')} resizeMode='contain'></Image>
+                                 </View>
+                                 <View style={{ flex: 1, width: '100%' }}></View>
+                               </View>
+                             </TouchableOpacity>
+                           </View>
+                         </View>
+                         <View style={{ flex: 0.05 }}></View>
+                         <View style={{ width: '100%', flex: 1, flexDirection: 'row' }}>
+                           <View style={{
+                             flex: 1, height: '85%',
+                           }}>
+                             <TouchableOpacity style={{
+                               shadowOffset: {
+                                 width: 0,
+                                 height: 4,
+                               },
+                               shadowOpacity: 0.30,
+                               shadowRadius: 3.65,
+
+                               elevation: 8,
+                             }} onPress={() =>navigate('Wellness')}>
+                               <View
+                                 style={{ height: '75%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#B22234',top:height*0.12 }}>
+                                 <View style={{ flex: 0.2, width: '100%' }}></View>
+                                 <View style={{ flex: 2, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                                   <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>Wellness</Text>
+                                 </View>
+                                 <View style={{ flex: 3, width: '100%' }}>
+                                   <Image style={{ width: '100%', height: '100%' }} source={require('../assets/mental.png')} resizeMode='contain'></Image>
+                                 </View>
+                                 <View style={{ flex: 1, width: '100%' }}></View>
+                               </View>
+                             </TouchableOpacity>
+                           </View>
+                           <View style={{ flex: 0.15, height: '95%' }}></View>
+                           <View style={{
+                             flex: 1, height: '85%',
+                           }}>
+                             <TouchableOpacity style={{
+                               shadowOffset: {
+                                 width: 0,
+                                 height: 4,
+                               },
+                               shadowOpacity: 0.30,
+                               shadowRadius: 3.65,
+
+                               elevation: 8,
+                             }} onPress={() => this.props.navigation.navigate('College')}>
+
+                               <View
+                                 style={{ height: '75%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#3773BB',top:height*0.12  }}>
+                                 <View style={{ flex: 0.2, width: '100%' }}></View>
+                                 <View style={{ flex: 2, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                                   <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>College</Text>
+                                 </View>
+                                 <View style={{ flex: 3, width: '100%' }}>
+                                   <Image style={{ width: '100%', height: '100%' }} source={require('../assets/cole.png')} resizeMode='contain'></Image>
+                                 </View>
+                                 <View style={{ flex: 1, width: '100%' }}></View>
+                               </View>
+                             </TouchableOpacity>
+                           </View>
+                         </View>
+
+                         <View style={{ flex: 0.1, width: '100%' }}>
+
+                         </View>
+                       </View>
+                     </View>
+
         )
         }
       }
