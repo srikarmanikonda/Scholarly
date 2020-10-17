@@ -1,0 +1,45 @@
+[
+    {
+      "schoolName": "Libertyville High School",
+      "city": "Libertyville",
+      "state": "Illinois",
+      "dates": "09/12/20, 02/06/21",
+      "centerCode": "174300"
+    },
+    {
+        "schoolName": "Adlai E Stevenson High School",
+        "city": "Lincolnshire",
+        "state": "Illinois",
+        "dates": "09/12/20, 02/06/21",
+        "centerCode": "174650"
+      },
+      {
+        "schoolName": "Carmel Catholic High School",
+        "city": "Mundelein",
+      "state": "Illinois",
+        "dates": "04/17/21",
+        "centerCode": "174440"
+      },
+      {
+        "schoolName": "Vernon Hills High School",
+        "city": "Vernon Hills",
+      "state": "Illinois",
+        "dates": null,
+        "centerCode": null
+      },
+      {
+      "schoolName": "Mundelein High School",
+        "city": "Mundelein",
+      "state": "Illinois",
+        "dates": "09/12/20, 10/24/20, 12/12/20, 02/06/21, 06/12/21",
+        "centerCode": "174430"
+      },
+      {
+        "schoolName": "Mundelein High School",
+          "city": "Mundelein",
+        "state": "Illinois",
+          "dates": "09/19/20",
+          "centerCode": "174437"
+        }
+    
+      ]

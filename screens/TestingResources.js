@@ -15,9 +15,17 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Prompt from 'react-native-input-prompt'
 import { Card, CardItem } from 'native-base'
 
+import * as Font from 'expo-font';
+import AppLoading from 'expo';
+
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 console.disableYellowBox = true;
+
+let customFonts = {
+    'Baloo': require('../assets/fonts/Baloo2-Regular.ttf'),
+  };
+  
 
 export default class TestingResources extends React.Component{
     constructor(props){
@@ -25,6 +33,19 @@ export default class TestingResources extends React.Component{
     }
     static navigationOptions = {
         title: 'TestingResources',
+      }
+
+      state = {
+        fontsLoaded: false,
+      };
+    
+      async _loadFontsAsync() {
+        await Font.loadAsync(customFonts);
+        this.setState({ fontsLoaded: true });
+      }
+    
+      componentDidMount() {
+        this._loadFontsAsync();
       }
 
 
@@ -35,8 +56,9 @@ export default class TestingResources extends React.Component{
         const {navigate} = this.props.navigation;
         return(
             <View style ={{flex:1,justifyContent:'center',alignItems:'center'}}>
+               
             <LinearGradient
-                colors = {['#29bdde','#337cd1','#fff']}
+                colors = {['#54C7E0','#3090D5','#337CD1','#00CEFC']}
                 style={{
                position: 'absolute',
                left: 0,
@@ -46,40 +68,56 @@ export default class TestingResources extends React.Component{
              }}/>
 
              <View>
+             <StatusBar hidden/>
+            
 
              <View style={{flexDirection:'row', marginBottom:height*0.05}}>
-             <TouchableOpacity style={styles.button} onPress = {()=> navigate('TestLoc')}>
-                <Text>TC Loc.</Text>
+             <TouchableOpacity style={styles.button} onPress = {()=> {
+                 Alert.alert(
+                    '','For which test would you like to view dates/locations for?',
+                    [
+                      {
+                        text: "ACT",
+                        onPress:() => navigate('ACTTestLocMAIN'),
+                      },
+                      { text: "SAT", onPress: () => navigate('SATTestLocMAIN') }
+                    ],
+                    { cancelable: false }
+                  );
+             }}>
+                <Text style={{color:'white',fontSize:15, fontFamily:'Baloo', marginHorizontal:width*0.01, textAlign:'center'}}>Testing Center Locations</Text>
             </TouchableOpacity>
-            <View style ={{marginRight:10}}>
+            <View style ={{marginRight:width*0.04}}>
 
             </View>
             <TouchableOpacity style={styles.button} onPress={()=> navigate('PracTests')}>
-                <Text>Prac Te.</Text>
+               
+                <Text style={{color:'white',fontSize:15, fontFamily:'Baloo',  marginHorizontal:width*0.01, textAlign:'center'}}>ACT/SAT Practice Tests</Text>
+            
             </TouchableOpacity>
-            <View style ={{marginRight:10}}>
+            <View style ={{marginRight:width*0.04}}>
 
             </View>
             <TouchableOpacity style={styles.button}>
-                <Text>?</Text>
+                <Text style={{color:'white',fontSize:15, fontFamily:'Baloo', marginHorizontal:width*0.01, textAlign:'center'}}>Additional Resources</Text>
             </TouchableOpacity>
              </View>
 
              <View style={{flexDirection:'row'}}>
              <TouchableOpacity style={styles.button}>
-                <Text>?</Text>
+                <Text style={{color:'white',fontSize:15, marginHorizontal:width*0.01, textAlign:'center'}}>?</Text>
             </TouchableOpacity>
-            <View style ={{marginRight:10}}>
+            <View style ={{marginRight:width*0.04}}>
 
             </View>
             <TouchableOpacity style={styles.button}>
-                <Text>?</Text>
+                <Text style={{color:'white',fontSize:15, marginHorizontal:width*0.01, textAlign:'center'}}>?</Text>
             </TouchableOpacity>
-            <View style ={{marginRight:10}}>
+            <View style ={{marginRight:width*0.04}}>
 
             </View>
             <TouchableOpacity style={styles.button}>
-                <Text>?</Text>
+                <Text style={{color:'white',fontSize:15, marginHorizontal:width*0.01, textAlign:'center'}}>?</Text>
             </TouchableOpacity>
              </View>
              </View>
@@ -89,12 +127,13 @@ export default class TestingResources extends React.Component{
     }
 }
 
+
 const styles = StyleSheet.create({
     button: {
-        width:width*0.25,
+        width:width*0.27,
     backgroundColor:'#226bc0',
     borderRadius:25,
-    height:height*0.09,
+    height:height*0.2,
     alignItems:"center",
     justifyContent:"center",
     }
