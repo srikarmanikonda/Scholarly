@@ -16,17 +16,45 @@ let first2 = true;
 
 var  predata  = [{
     name: "CLC",
-    id: "100",
+    id: "1",
     link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     description: "A community college for the families of vernon hills ",
     appdeadline:"12/19/20"
   },{
     name: "Arizona State University",
-    id: "9999",
+    id: "2",
     link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     description: "ferda kyles",
     appdeadline:"12/20/20"
-  }]
+  },
+  {
+    name: "Northwestern University",
+    id: "3",
+    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    description: "ferda kyles",
+    appdeadline:"12/20/20"
+  },
+  {
+    name: "University of Illinois at Urbana-Champaign",
+    id: "4",
+    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    description: "ferda kyles",
+    appdeadline:"12/20/20"
+  },
+  {
+    name: "Benedicti9ne University",
+    id: "5",
+    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    description: "ferda kyles",
+    appdeadline:"12/20/20"
+  },
+  {
+    name: "Purdue University",
+    id: "6",
+    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    description: "ferda kyles",
+    appdeadline:"12/20/20"
+  },]
 
 var fullData=  [];
 
