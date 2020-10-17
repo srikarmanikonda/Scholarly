@@ -14,7 +14,7 @@ const wid = entireScreenWidth / 380;
 let first = true;
 let first2 = true;
 
-var  wacko  = [{
+var  predata  = [{
     name: "CLC",
     id: "100",
     link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",

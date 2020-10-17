@@ -16,6 +16,7 @@ import TestingResources from './screens/TestingResources';
 import PracTest from './screens/PracTests';
 import Wellness from'./screens/wellness';
 import Scholarships from './screens/Scholarships'
+import College from'./screens/colegio'
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -60,7 +61,10 @@ Settings:{
 },
 Wellness:{
   screen:Wellness
-}
+},
+College:{
+  screen:College
+},
 
 
 

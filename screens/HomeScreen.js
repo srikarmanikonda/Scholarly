@@ -49,7 +49,7 @@ export default class App extends React.Component {
                                elevation: 8,
                              }} onPress={() =>navigate('TestingResources')}>
                                <View
-                                 style={{ height: '90%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#3773BB',top:height*0.1 }}>
+                                 style={{ height: '75%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#3773BB',top:height*0.23 }}>
                                  <View style={{ flex: 0.2, width: '100%' }}></View>
                                  <View style={{ flex: 2, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
                                    <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>Testing</Text>
@@ -76,7 +76,7 @@ export default class App extends React.Component {
                                elevation: 8,
                              }} onPress={() => this.props.navigation.navigate('Scholarships')}>
                                <View
-                                 style={{ height: '90%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#B22234',top:height*0.1 }}>
+                                 style={{ height: '75%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#B22234',top:height*0.23 }}>
                                  <View style={{ flex: 0.2, width: '100%' }}></View>
                                  <View style={{ flex: 2, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
                                    <Text onPress={() => this.props.navigation.navigate('Chat')} style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>Scholarships</Text>
@@ -105,7 +105,7 @@ export default class App extends React.Component {
                                elevation: 8,
                              }} onPress={() =>navigate('Wellness')}>
                                <View
-                                 style={{ height: '90%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#B22234' }}>
+                                 style={{ height: '75%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#B22234',top:height*0.12 }}>
                                  <View style={{ flex: 0.2, width: '100%' }}></View>
                                  <View style={{ flex: 2, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
                                    <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>Wellness</Text>
@@ -130,10 +130,10 @@ export default class App extends React.Component {
                                shadowRadius: 3.65,
 
                                elevation: 8,
-                             }} onPress={() => navigate('colegio')}>
+                             }} onPress={() => this.props.navigation.navigate('College')}>
 
                                <View
-                                 style={{ height: '90%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#3773BB' }}>
+                                 style={{ height: '75%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#3773BB',top:height*0.12  }}>
                                  <View style={{ flex: 0.2, width: '100%' }}></View>
                                  <View style={{ flex: 2, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
                                    <Text style={{ fontWeight: 'bold', fontSize: Math.min(12.5 * rem, 22.5 * wid), color: 'white' }}>College</Text>
