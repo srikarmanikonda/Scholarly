@@ -45,7 +45,7 @@ export default class App extends React.Component {
     };
 
 
-   
+
   }
 
   updateSearch = (search) => {
@@ -64,12 +64,12 @@ export default class App extends React.Component {
     console.log( fullData);
     this.state.data = fullData;
 };
-    
+
    edit(item){
 
 
       Linking.openURL(item.link);
-    
+
   }
 
   _renderItem = ({ item }) => {
@@ -77,18 +77,18 @@ export default class App extends React.Component {
       <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.edit(item)}><Text style={{ color: 'white', paddingLeft: entireScreenHeight / 30 }}>Apply</Text></TouchableHighlight>,
     ];
     if (item.header) {
-      
+
       return (
 
         <ListItem itemDivider >
           <Body style={{ marginRight: 0, alignItems: 'center' }}>
             <Text style={{ fontWeight: "bold" }}>
-             {moment(item.date, 'MM-DD-YYYY').format('MMMM Do, YYYY')} 
+             {moment(item.date, 'MM-DD-YYYY').format('MMMM Do, YYYY')}
             </Text>
           </Body>
         </ListItem>
       );
-      
+
     }
     else {
       var f = false
@@ -97,7 +97,7 @@ export default class App extends React.Component {
         first = false;
       }
       return (
-        
+
 
         <Swipeable rightButtons={rightButtons} rightButtonWidth={entireScreenWidth / 5} bounceOnMount={f}>
           <ListItem style={{ marginLeft: 0, backgroundColor: 'transparent' }}>
@@ -109,7 +109,7 @@ export default class App extends React.Component {
           </ListItem>
         </Swipeable >
 
-        
+
       );
     }
   };
@@ -140,9 +140,9 @@ export default class App extends React.Component {
     const onPress = () => {
       this.props.navigation.navigate('HomeScreen')
     }
-    
 
-    
+
+
   //  // console.log(JSON.stringify(global.drives))
     const entireScreenHeight = Dimensions.get('window').height;
     const rem = entireScreenHeight / 380;
@@ -155,7 +155,7 @@ export default class App extends React.Component {
     else {
       ree = 1.75 * wid;
     }
-    
+
       return (
 
         <View style={styles.container}>
@@ -163,7 +163,7 @@ export default class App extends React.Component {
 
           <View style={styles.navBar}>
           <TouchableOpacity
-               
+
                 onPress={onPress}
                 disabled={this.state.loading}
 
@@ -172,7 +172,7 @@ export default class App extends React.Component {
                   height: 60,
                   width: 60,
                 }}></Image>
-                
+
               </TouchableOpacity>
               <Image source={require('../assets/mainlogo.png')} style={{
                   height: 50,
@@ -183,9 +183,9 @@ export default class App extends React.Component {
 
         </View>
 
-       
+
           <ImageBackground source={require('../assets/login.png')} style={styles.image}>
-              
+
             <View style={{ flex: 1, width: '90%', alignItems: 'center' }}>
               </View>
             <View style={{ width: '100%', flex: 6 }}>
@@ -202,7 +202,7 @@ export default class App extends React.Component {
               />
             </View>
 
-            
+
             <View style={{
               width: '73%',
               flex: 1,
@@ -228,7 +228,7 @@ export default class App extends React.Component {
         </View>
       );
     }
-  
+
 }
 const styles = StyleSheet.create({
   container: {
