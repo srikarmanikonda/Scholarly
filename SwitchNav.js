@@ -10,10 +10,14 @@ import Signup from './screens/Signup'
 import HomeScreen from './screens/HomeScreen'
 import ProfileScreen from './screens/Profile'
 import Settings from './screens/Settings'
-import TestLocator from './screens/TestLoc'
+import ACTTestLocator from './screens/ACTTestLoc'
 import Map from './screens/Map'
+import SATTestLocator from './screens/SATTestLoc'
 import TestingResources from './screens/TestingResources';
 import PracTest from './screens/PracTests';
+import ACTTestLocMAIN from './screens/ACTTestLocMAIN';
+import SATTestLocMAIN from './screens/SATTestLocMAIN';
+import ACTCustom from './screens/ACTCustom'
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 var username = ''
@@ -21,21 +25,37 @@ var email = ''
 var password = ''
 
 const AppNavigator = createSwitchNavigator({
-
+  
   TestingResources: {
     screen: TestingResources
   },
 
-  TestLoc: {
-    screen: TestLocator
+  ACTTestLocMAIN: {
+    screen: ACTTestLocMAIN
+  },
+
+  SATTestLocMAIN: {
+    screen: SATTestLocMAIN
+  },
+  HomeScreen:{
+    screen: HomeScreen
+  },
+
+  ACTCustom:{
+    screen: ACTCustom
+  },
+
+  ACTTestLoc: {
+    screen: ACTTestLocator
+  },
+  SATTestLoc: {
+    screen: SATTestLocator
   },
 
   PracTests: {
     screen: PracTest
   },
-  HomeScreen:{
-    screen: HomeScreen
-  },
+  
 
   Profile: {
     screen: ProfileScreen

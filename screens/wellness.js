@@ -1,4 +1,4 @@
-mport React from 'react';
+import React from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import { StyleSheet, Text, View, Dimensions, Image, TouchableOpacity, ImageBackground } from 'react-native';
 
@@ -71,7 +71,6 @@ export default class App extends React.Component {
 
             </TouchableOpacity>
           </View>
-        </ImageBackground>
       </View>
 
     )
