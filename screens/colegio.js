@@ -42,7 +42,7 @@ var  predata  = [{
     appdeadline:"12/20/20"
   },
   {
-    name: "Benedicti9ne University",
+    name: "Benedictine University",
     id: "5",
     link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     description: "ferda kyles",
@@ -51,8 +51,7 @@ var  predata  = [{
   {
     name: "Purdue University",
     id: "6",
-    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    description: "ferda kyles",
+     description: "ferda kyles",
     appdeadline:"12/20/20"
   },]
 
