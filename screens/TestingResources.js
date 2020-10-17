@@ -16,15 +16,13 @@ import Prompt from 'react-native-input-prompt'
 import { Card, CardItem } from 'native-base'
 
 import * as Font from 'expo-font';
-import AppLoading from 'expo';
+import { AppLoading } from 'expo';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 console.disableYellowBox = true;
 
-let customFonts = {
-    'Baloo': require('../assets/fonts/Baloo2-Regular.ttf'),
-  };
+
   
 
 export default class TestingResources extends React.Component{
@@ -35,25 +33,38 @@ export default class TestingResources extends React.Component{
         title: 'TestingResources',
       }
 
+
+
+//beginning of font code
+
       state = {
-        fontsLoaded: false,
+        loaded: false
       };
-    
-      async _loadFontsAsync() {
-        await Font.loadAsync(customFonts);
-        this.setState({ fontsLoaded: true });
-      }
+     
+      _loadFontsAsync = async () => {
+        let isLoaded = await Font.loadAsync({
+          FontBest: require("../assets/fonts/Commissioner-Light.ttf")
+        });
+        this.setState({ loaded: true });
+      };
     
       componentDidMount() {
         this._loadFontsAsync();
       }
 
 
-// THIS WILL HAVE BUTTONS SIMILAR TO THAT IN THE HOME SCREEN which will lead to other individual screens
-    
+
+
 
     render(){
         const {navigate} = this.props.navigation;
+
+        //MAKE SURE U HAVE THIS IF STATEMENT
+        if (!this.state.loaded) {
+          return <AppLoading />;
+        }
+
+        //end
         return(
             <View style ={{flex:1,justifyContent:'center',alignItems:'center'}}>
                
@@ -85,21 +96,21 @@ export default class TestingResources extends React.Component{
                     { cancelable: false }
                   );
              }}>
-                <Text style={{color:'white',fontSize:15, fontFamily:'Baloo', marginHorizontal:width*0.01, textAlign:'center'}}>Testing Center Locations</Text>
+                <Text style={{color:'white',fontSize:15, fontFamily:'FontBest', marginHorizontal:width*0.01, textAlign:'center'}}>Testing Center Locations</Text>
             </TouchableOpacity>
             <View style ={{marginRight:width*0.04}}>
 
             </View>
             <TouchableOpacity style={styles.button} onPress={()=> navigate('PracTests')}>
                
-                <Text style={{color:'white',fontSize:15, fontFamily:'Baloo',  marginHorizontal:width*0.01, textAlign:'center'}}>ACT/SAT Practice Tests</Text>
+                <Text style={{color:'white',fontSize:15, fontFamily:'FontBest',  marginHorizontal:width*0.01, textAlign:'center'}}>ACT/SAT Practice Tests</Text>
             
             </TouchableOpacity>
             <View style ={{marginRight:width*0.04}}>
 
             </View>
             <TouchableOpacity style={styles.button}>
-                <Text style={{color:'white',fontSize:15, fontFamily:'Baloo', marginHorizontal:width*0.01, textAlign:'center'}}>Additional Resources</Text>
+                <Text style={{color:'white',fontSize:15, fontFamily:'FontBest', marginHorizontal:width*0.01, textAlign:'center'}}>Additional Resources</Text>
             </TouchableOpacity>
              </View>
 
