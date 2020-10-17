@@ -4,6 +4,8 @@ import { Text, ListItem, Left, Body, Icon, Right, Title } from "native-base";
 import Swipeable from 'react-native-swipeable-row';
 import { SearchBar } from 'react-native-elements';
 import moment from "moment";
+import {LinearGradient} from 'expo-linear-gradient'
+
 
 
 
@@ -43,9 +45,6 @@ export default class App extends React.Component {
       spinner: false,
       search: '',
     };
-
-
-
   }
 
   updateSearch = (search) => {
@@ -74,7 +73,11 @@ export default class App extends React.Component {
 
   _renderItem = ({ item }) => {
     const rightButtons = [
-      <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.edit(item)}><Text style={{ color: 'white', paddingLeft: entireScreenHeight / 30 }}>Apply</Text></TouchableHighlight>,
+      <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.edit(item)}> 
+      <Text style={{ fontWeight: 'bold', color: 'blue', paddingLeft: entireScreenHeight / 30 }}>Apply</Text>
+      
+  </TouchableHighlight>
+ ,
     ];
     if (item.header) {
 
@@ -97,14 +100,12 @@ export default class App extends React.Component {
         first = false;
       }
       return (
-
-
         <Swipeable rightButtons={rightButtons} rightButtonWidth={entireScreenWidth / 5} bounceOnMount={f}>
           <ListItem style={{ marginLeft: 0, backgroundColor: 'transparent' }}>
             <Body>
-              <Text style={{ flex: 1, fontFamily: 'WSB', color: 'black' }}>{item.name}</Text>
-              <Text style={{ flex: 1, fontFamily: 'WSR', color: 'black' }}>{item.description} </Text>
-              <Text style={{ flex: 1, fontFamily: 'WSR', color: 'black' }}>{item.deadline} </Text>
+              <Text style={{ fontWeight: 'bold', flex: 1, color: 'black' }}>{item.name}</Text>
+              <Text style={{  flex: 1, color: 'black' }}>{item.description} </Text>
+              <Text style={{  flex: 1, color: 'black' }}>{item.deadline} </Text>
             </Body>
           </ListItem>
         </Swipeable >
@@ -113,18 +114,7 @@ export default class App extends React.Component {
       );
     }
   };
-  renderSeparator = () => {
-    return (
-      <View
-        style={{
-          height: 1,
-          width: "86%",
-          backgroundColor: "#CED0CE",
-          marginLeft: "14%"
-        }}
-      />
-    );
-  };
+  
   renderHeader = () => {
     const { search } = this.state;
 
@@ -161,7 +151,19 @@ export default class App extends React.Component {
         <View style={styles.container}>
 
 
-          <View style={styles.navBar}>
+          
+        <LinearGradient
+   colors = {['#54C7E0','#3090D5','#337CD1','#00CEFC']}
+   style={{
+             position: 'absolute',
+             left: 0,
+             right: 0,
+             top: 0,
+             height:entireScreenHeight,
+           }}
+           />
+
+<View style={styles.navBar}>
           <TouchableOpacity
 
                 onPress={onPress}
@@ -183,14 +185,11 @@ export default class App extends React.Component {
 
         </View>
 
-
-          <ImageBackground source={require('../assets/login.png')} style={styles.image}>
-
             <View style={{ flex: 1, width: '90%', alignItems: 'center' }}>
               </View>
             <View style={{ width: '100%', flex: 6 }}>
-
               <FlatList style={{ width: '100%' }}
+                  marginTop ={'-15%'}
 
                 data={this.state.data}
                 renderItem={this._renderItem}
@@ -224,7 +223,6 @@ export default class App extends React.Component {
 
               </TouchableOpacity>
             </View>
-          </ImageBackground>
         </View>
       );
     }
@@ -240,10 +238,10 @@ const styles = StyleSheet.create({
 
   },
   navBar: {
-    height: 70,
+    height: '12%',
     width: '100%',
     backgroundColor: '#1e5ae6',
-    elevation:20,
+    elevation:40,
     paddingHorizontal: 10,
     flexDirection: 'row',
     alignItems: 'center',
