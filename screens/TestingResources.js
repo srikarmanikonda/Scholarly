@@ -15,9 +15,17 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Prompt from 'react-native-input-prompt'
 import { Card, CardItem } from 'native-base'
 
+import * as Font from 'expo-font';
+import AppLoading from 'expo';
+
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 console.disableYellowBox = true;
+
+let customFonts = {
+    'Baloo': require('../assets/fonts/Baloo2-Regular.ttf'),
+  };
+  
 
 export default class TestingResources extends React.Component{
     constructor(props){
@@ -25,6 +33,19 @@ export default class TestingResources extends React.Component{
     }
     static navigationOptions = {
         title: 'TestingResources',
+      }
+
+      state = {
+        fontsLoaded: false,
+      };
+    
+      async _loadFontsAsync() {
+        await Font.loadAsync(customFonts);
+        this.setState({ fontsLoaded: true });
+      }
+    
+      componentDidMount() {
+        this._loadFontsAsync();
       }
 
 
@@ -64,21 +85,21 @@ export default class TestingResources extends React.Component{
                     { cancelable: false }
                   );
              }}>
-                <Text style={{color:'white',fontSize:15, marginHorizontal:width*0.01, textAlign:'center'}}>Testing Center Locations</Text>
+                <Text style={{color:'white',fontSize:15, fontFamily:'Baloo', marginHorizontal:width*0.01, textAlign:'center'}}>Testing Center Locations</Text>
             </TouchableOpacity>
             <View style ={{marginRight:width*0.04}}>
 
             </View>
             <TouchableOpacity style={styles.button} onPress={()=> navigate('PracTests')}>
                
-                <Text style={{color:'white',fontSize:15, marginHorizontal:width*0.01, textAlign:'center'}}>ACT/SAT Practice Tests</Text>
+                <Text style={{color:'white',fontSize:15, fontFamily:'Baloo',  marginHorizontal:width*0.01, textAlign:'center'}}>ACT/SAT Practice Tests</Text>
             
             </TouchableOpacity>
             <View style ={{marginRight:width*0.04}}>
 
             </View>
             <TouchableOpacity style={styles.button}>
-                <Text style={{color:'white',fontSize:15, marginHorizontal:width*0.01, textAlign:'center'}}>Additional Resources</Text>
+                <Text style={{color:'white',fontSize:15, fontFamily:'Baloo', marginHorizontal:width*0.01, textAlign:'center'}}>Additional Resources</Text>
             </TouchableOpacity>
              </View>
 
@@ -105,6 +126,7 @@ export default class TestingResources extends React.Component{
         )
     }
 }
+
 
 const styles = StyleSheet.create({
     button: {
