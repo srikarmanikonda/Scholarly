@@ -74,7 +74,7 @@ export default class App extends React.Component {
                                shadowRadius: 3.65,
 
                                elevation: 8,
-                             }} onPress={() => this.props.navigation.navigate('Scholarships')}>
+                             }} onPress={() => navigate('Scholarships')}>
                                <View
                                  style={{ height: '75%', alignItems: 'center', borderRadius: 20, width: '100%', justifyContent: 'center', backgroundColor: '#B22234',top:height*0.23 }}>
                                  <View style={{ flex: 0.2, width: '100%' }}></View>
