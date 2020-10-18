@@ -5,8 +5,8 @@ import Swipeable from 'react-native-swipeable-row';
 import { SearchBar } from 'react-native-elements';
 import moment from "moment";
 import {LinearGradient} from 'expo-linear-gradient'
-
-
+import { AntDesign } from 'react-native-vector-icons'
+import * as Font from 'expo-font';
 
 
 const entireScreenHeight = Dimensions.get('window').height;
@@ -50,7 +50,20 @@ export default class App extends React.Component {
       data: predata,
       spinner: false,
       search: '',
+      loaded: false
     };
+  }
+
+  _loadFontsAsync = async () => {
+    let isLoaded = await Font.loadAsync({
+      FontBest: require("../assets/fonts/Commissioner-Light.ttf"),
+      FontBestBold: require("../assets/fonts/Commissioner-Bold.ttf"),
+    });
+    this.setState({ loaded: true });
+  };
+
+  componentDidMount() {
+    this._loadFontsAsync();
   }
 
   updateSearch = (search) => {
@@ -83,7 +96,7 @@ export default class App extends React.Component {
   _renderItem = ({ item }) => {
     const rightButtons = [
       <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.edit(item)}>
-      <Text style={{ fontWeight: 'bold', color: 'blue', paddingLeft: entireScreenHeight / 30 }}>Apply</Text>
+      <Text style={{fontFamily:'FontBestBold',  color: 'blue', paddingLeft: entireScreenHeight / 30 }}>Apply</Text>
 
   </TouchableHighlight>,
 
@@ -94,7 +107,7 @@ export default class App extends React.Component {
 
         <ListItem itemDivider >
           <Body style={{ marginRight: 0, alignItems: 'center' }}>
-            <Text style={{ fontWeight: "bold" }}>
+            <Text style={{fontFamily:'FontBestBold',  }}>
              {moment(item.date, 'MM-DD-YYYY').format('MMMM Do, YYYY')}
             </Text>
           </Body>
@@ -112,9 +125,9 @@ export default class App extends React.Component {
         <Swipeable rightButtons={rightButtons} rightButtonWidth={entireScreenWidth / 5} bounceOnMount={f}>
           <ListItem style={{ marginLeft: 0, backgroundColor: 'transparent' , elevation: 5}}>
             <Body>
-              <Text style={{ fontWeight: 'bold', flex: 1, color: 'black' }}>{item.name}</Text>
-              <Text style={{  flex: 1, color: 'black' }}>{item.description} </Text>
-              <Text style={{  flex: 1, color: 'black' }}>{item.deadline} </Text>
+              <Text style={{fontFamily:'FontBestBold', flex: 1, color: 'black' }}>{item.name}</Text>
+              <Text style={{fontFamily:'FontBest',  flex: 1, color: 'black' }}>{item.description} </Text>
+              <Text style={{fontFamily:'FontBest',  flex: 1, color: 'black' }}>{item.deadline} </Text>
             </Body>
           </ListItem>
         </Swipeable >
@@ -134,6 +147,8 @@ export default class App extends React.Component {
   />;
   };
   static navigationOptions = { headerMode: 'none', gestureEnabled: false };
+
+
   render() {
     //// console.log(global.drives)
     const onPress = () => {
@@ -145,11 +160,20 @@ export default class App extends React.Component {
     const entireScreenWidth = Dimensions.get('window').width;
     const wid = entireScreenWidth / 380;
     var ree;
+    
+
     if (entireScreenWidth >= 0.92 * entireScreenHeight * 4 / 9 * 1524 / 1200) {
       ree = rem;
     }
     else {
       ree = 1.75 * wid;
+    }
+
+    if (!this.state.loaded) {
+      return (
+      <View>
+        <StatusBar hidden />
+      </View>)
     }
 
       return (
@@ -169,15 +193,17 @@ export default class App extends React.Component {
            />
 
 <View style={styles.navBar}>
+  <StatusBar hidden/>
           <TouchableOpacity
 
                 onPress={onPress}
                 disabled={this.state.loading}
               >
-                <Image source={require('../assets/logout.png')} style={{
+                <AntDesign name='arrowleft' color='white' size={35} style={{marginLeft: entireScreenWidth*0.03}}/>
+                {/* <Image source={require('../assets/logout.png')} style={{
                   height: 60,
                   width: 60,
-                }}></Image>
+                }}></Image> */}
 
               </TouchableOpacity>
               <Image source={require('../assets/mainlogo.png')} style={{
@@ -241,9 +267,9 @@ const styles = StyleSheet.create({
 
   },
   navBar: {
-    height: '12%',
+    height: '14%',
     width: '100%',
-    backgroundColor: '#1e5ae6',
+    backgroundColor: '#3090D5',
     elevation:40,
     paddingHorizontal: 10,
     flexDirection: 'row',

@@ -50,6 +50,8 @@ arrayForFlatlist(){
 
 showCenters (){
     listOfCenters=[];
+    cities=[];
+    USstates=[];
     var selectedDate = this.state.dropDownSelected
     for (var i=0; i<data.length; i++){
         var ayo = data[i].dates;
@@ -61,6 +63,9 @@ showCenters (){
           }
         }
     }
+    console.log("showing listOfCenters"+listOfCenters);
+    console.log("showing cities"+cities);
+    console.log("showing USStates"+USstates);
     this.arrayForFlatlist();
 }
 
@@ -85,7 +90,10 @@ showCenters (){
             // add'l resources - khan academy/those kinds of resources, tutors, registration process, key facts/deadlines, more, etc
             //check memos.
 
-            //CHANGE DATES (ACT)
+            //change links in wellness?
+            //final fixes
+
+            //funds of view/comps/props/organization ovr, look at prof.
 
             <View style ={{flex:1,alignItems:'center'}}>
                
@@ -146,9 +154,10 @@ showCenters (){
 
              </View>
 
+
              <FlatList data={this.state.finArr} renderItem={({ item })=>(
                  <View style={{flexDirection:'row', justifyContent:'center'}}>
-                <Card >
+                <Card style={{width:width*0.7}}>
                     <CardItem style={{backgroundColor: '#fff'}}>
                         
                         <Text style={{fontSize:16}}>
@@ -176,7 +185,7 @@ showCenters (){
 
                 </View>
 
-             )} />
+             )}/>
 
 
             </View>

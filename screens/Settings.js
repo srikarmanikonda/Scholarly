@@ -10,43 +10,44 @@ import * as Permissions from 'expo-permissions'
 import { Button, Image, ListItem } from 'react-native-elements'
 
 import { AntDesign, FontAwesome, EvilIcons, Octicons, Feather, MaterialIcons, MaterialCommunityIcons, FontAwesome5, Entypo, Ionicons } from 'react-native-vector-icons';
+import { AppLoading } from 'expo';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 console.disableYellowBox = true;
 var name = 'Andrew Tikhonov'
 
+const customFonts = {
+  Best: require("../assets/fonts/Commissioner-Regular.ttf"),
+};
+
+
 
 export default function Settings({ navigation }) {
-    const onShare = async () => {
-        try {
-          const result = await Share.share({
-            message:
-              'Hey! You should join this new app called Unity. It provides helpful information regarding COVID-19 and helps make a difference in the community!',
-          });
-          if (result.action === Share.sharedAction) {
-            if (result.activityType) {
-              // shared with activity type of result.activityType
-            } else {
-              // shared
-            }
-          } else if (result.action === Share.dismissedAction) {
-            console.log("dismissed")
-          }
-        } catch (error) {
-          alert(error.message);
-        }
-      };
+    // const onShare = async () => {
+    //     try {
+    //       const result = await Share.share({
+    //         message:
+    //           'Hey! You should join this new app called Unity. It provides helpful information regarding COVID-19 and helps make a difference in the community!',
+    //       });
+    //       if (result.action === Share.sharedAction) {
+    //         if (result.activityType) {
+    //           // shared with activity type of result.activityType
+    //         } else {
+    //           // shared
+    //         }
+    //       } else if (result.action === Share.dismissedAction) {
+    //         console.log("dismissed")
+    //       }
+    //     } catch (error) {
+    //       alert(error.message);
+    //     }
+    //   };
 
   const navBack = () => {
-    navigation.navigate('Profile')
+    navigation.navigate('HomeScreen')
   }
   const list = [
-    {
-      title: 'Invite Friends',
-      icon: 'users',
-      icontype: 'feather'
-    },
     {
         title: 'Reset Email',
         icon: 'email',
@@ -64,6 +65,8 @@ export default function Settings({ navigation }) {
         icontype: 'entypo'
     },
   ]
+
+ 
   
   return (
 
@@ -103,8 +106,8 @@ export default function Settings({ navigation }) {
         <TouchableOpacity onPress={navBack} style={{width:width*0.5}}>
             <View style={{borderRadius: 8, paddingVertical: 10, paddingHorizontal: 10,backgroundColor: '#ddd',}}>
             <FontAwesome name = 'long-arrow-left' size={30} style ={{marginTop: '-2%', marginLeft: '0%', color: '#777'}}/>
-                <Text style={{color: 'black',fontSize: 16,textAlign: 'center', marginTop:'-17%', marginLeft:'20%'}}>
-                    Back to Profile
+                <Text style={{color: 'black',fontSize: 16, fontFamily: '', textAlign: 'center', marginTop:'-17%', marginLeft:'20%'}}>
+                    Back to Home
                 </Text>
             </View>
         </TouchableOpacity>
