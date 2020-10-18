@@ -32,14 +32,14 @@ var email = ''
 var password = ''
 
 const AppNavigator = createSwitchNavigator({
-
-
   HomeScreen:{
     screen: HomeScreen
   },
   Login: {
     screen: Login
   },
+
+
   Signup:{
     screen: Signup
   },

@@ -19,53 +19,123 @@ var  predata  = [{
     name: "CLC",
     id: "1",
     link: "https://www.clcillinois.edu/",
-    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\nAcceptance Rate: 95+ %\nIn-person, hybrid, or remote: Hybrid\nAverage ACT/SAT score: N/A\n",
     appdeadline:"12/19/20"
   },{
     name: "Arizona State University",
     id: "2",
-    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    link: "https://admission.asu.edu/apply",
+    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\nAcceptance Rate: 88 %\nIn-person, hybrid, or remote: Hybrid\nAverage ACT/SAT score: 22/1050\n",
     appdeadline:"12/20/20"
   },
   {
     name: "Ohio State University",
     id: "3",
-    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    link: "https://www.osu.edu/",
+    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\nAcceptance Rate:95+ %\nIn-person, hybrid, or remote: Hybrid\nAverage ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },
   {
     name: "Harvard University",
     id: "4",
-    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    link: "https://college.harvard.edu/admissions/apply",
+    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:5 %\nIn-person, hybrid, or remote: Hybrid\nAverage ACT/SAT score: 34/1490\n",
     appdeadline:"12/20/20"
   },
   {
     name: "Northwestern University",
     id: "5",
-    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    link: "https://www.northwestern.edu/",
+    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): Y\nAcceptance Rate:8%\n In-person, hybrid, or remote: Remote\n Average ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },
   {
     name: "University of Illinois at Urbana-Champaign",
     id: "6",
     link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate: 95+ %\nIn-person, hybrid, or remote: Hybrid\nAverage ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },
   {
     name: "Benedictine University",
     id: "7",
-    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    link: "https://www.ben.edu//",
+    description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate: 95+%\n In-person, hybrid, or remote: In-person\n Average ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },
+
   {
     name: "Purdue University",
     id: "8",
+
+        link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Remote\n Average ACT/SAT score: N/A\n",
+    appdeadline:"12/20/20"
+  },
+
+  {
+    name: "Stanford University",
+    id: "9",
+    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:4.8 %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    appdeadline:"12/20/20"
+  },
+  {
+    name: "University of Michgan",
+    id: "10",
+        link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): Y\n Acceptance Rate:95+ %\nIn-person, hybrid, or remote: Hybrid\nAverage ACT/SAT score: N/A\n",
+    appdeadline:"12/20/20"
+  },
+  {
+    name: "Illinois State University",
+    id: "11",
+        link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Remote\n Average ACT/SAT score: N/A\n",
+    appdeadline:"12/20/20"
+  },
+  {
+    name: "Michigan State University",
+    id: "12",
+        link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): Y\n Acceptance Rate: 78 %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    appdeadline:"12/20/20"
+  },
+  {
+    name: "Case Western Reserve University",
+    id: "13",
+        link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:29 %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    appdeadline:"12/20/20"
+  },
+
+
+  {
+    name: "Yale University",
+    id: "15",
+        link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): Y\n Acceptance Rate: 6.3 %\nIn-person, hybrid, or remote: Remote\nAverage ACT/SAT score: N/A\n",
+    appdeadline:"12/20/20"
+  },
+  {
+    name: "Auburn University",
+    id: "16",
+        link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\nIn-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
+    appdeadline:"12/20/20"
+  },
+  {
+    name: "Iowa State University",
+    id: "17",
+        link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+     description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): Y\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: In-person\n Average ACT/SAT score: N/A\n",
+    appdeadline:"12/20/20"
+  },
+  {
+    name: " University of Alabama",
+    id: "18",
+        link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+
      description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },]
@@ -115,7 +185,7 @@ export default class App extends React.Component {
 
   _renderItem = ({ item }) => {
     const rightButtons = [
-      <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.one(item)}><Text style={{ color: 'white', paddingLeft: entireScreenHeight / 30 }}>Apply</Text></TouchableHighlight>,
+      <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.one(item)}><Text style={{ color: 'white', paddingLeft: entireScreenHeight / 30 }}>View Website</Text></TouchableHighlight>,
     ];
     if (item.header) {
 
@@ -229,9 +299,9 @@ export default class App extends React.Component {
 
             <View style={{ flex: 1, width: '90%', alignItems: 'center' }}>
               </View>
-            <View style={{ width: '100%', flex: 6 }}>
+            <View style={{ width: '100%', flex: 8 }}>
 
-              <FlatList style={{ width: '100%' }}
+              <FlatList style={{ width: '100%',height:"100%",marginTop:"-18.3%" }}
 
                 data={this.state.data}
                 renderItem={this._renderItem}
@@ -281,9 +351,9 @@ const styles = StyleSheet.create({
 
   },
   navBar: {
-    height: 70,
+    height: entireScreenHeight*0.14,
     width: '100%',
-    backgroundColor: '#1e5ae6',
+    backgroundColor: '#BFEFFF',
     elevation:20,
     paddingHorizontal: 10,
     flexDirection: 'row',
