@@ -28,7 +28,7 @@ var interestedColls = [{
 {
   name: 'Harvard University',
   key: 1
-},
+}
 ]
 
 //what is props? constructor? async? await? promise? state? lifecycle? api? function vs class? scrollview?
@@ -334,7 +334,9 @@ export default function ProfileScreen({ navigation }) {
                 </View>
              )} />
      
+<View style={{marginBottom:height*0.04}}>
 
+</View>
       
 
 

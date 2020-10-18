@@ -94,6 +94,8 @@ showCenters (){
             //final fixes
 
             //funds of view/comps/props/organization ovr, look at prof.
+            //Type here wackyness?
+            //thing at bottom - how do do? why nav home when press center?
 
             <View style ={{flex:1,alignItems:'center'}}>
                
