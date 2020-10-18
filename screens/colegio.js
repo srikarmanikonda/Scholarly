@@ -67,6 +67,7 @@ var  predata  = [{
   {
     name: "Purdue University",
     id: "8",
+
         link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
      description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Remote\n Average ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
@@ -134,6 +135,7 @@ var  predata  = [{
     name: " University of Alabama",
     id: "18",
         link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+
      description: "Updated Covid Requirements 2020-2021: Act/SAT required (y/n): N\nLetters of reccomendation required(y/n): N\n Acceptance Rate:95+ %\n In-person, hybrid, or remote: Hybrid\n Average ACT/SAT score: N/A\n",
     appdeadline:"12/20/20"
   },]
