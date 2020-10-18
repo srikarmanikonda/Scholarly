@@ -1,5 +1,5 @@
 import React, {Component, useState} from 'react';
-import { View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Image, TextInput, TouchableOpacity, Dimensions, AsyncStorage, KeyboardAvoidingView } from 'react-native';
+import { View, StatusBar, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Image, TextInput, TouchableOpacity, Dimensions, AsyncStorage, KeyboardAvoidingView } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import {LinearGradient} from 'expo-linear-gradient'
 import { Camera } from 'expo-camera'
@@ -23,6 +23,7 @@ export default class App extends React.Component {
 
     return (
       <View style={styles.container}>
+        <StatusBar hidden/>
       <LinearGradient
    colors = {['#54C7E0','#3090D5','#337CD1','#00CEFC']}
    style={{

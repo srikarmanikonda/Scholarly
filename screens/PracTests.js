@@ -117,7 +117,16 @@ export default function PracTests({ navigation }) {
                </View>
             </Modal>
 
-        <View style={{marginTop: height*0.00, }}>
+        <View style={{marginTop: height*0.00,}}>
+        <LinearGradient
+                colors = {['#54C7E0','#349DE8','#00CEFC']}
+                style={{
+               position: 'absolute',
+               left: 0,
+               right: 0,
+               top: 0,
+               height:height*2,
+             }}/>
         <View style={{alignItems:'center'}}>
         <Text style={{alignItems:'center', marginTop:height*0.03, marginBottom:height*0.0, marginHorizontal:width*0.05, fontSize:12}}>
             Note: ACT practice test answers can be found near the end of each respective booklet. SAT practice test answers can be accessed by clicking the icon to the right of each respective practice test.
