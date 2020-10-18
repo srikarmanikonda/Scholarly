@@ -96,7 +96,7 @@ export default class App extends React.Component {
   _renderItem = ({ item }) => {
     const rightButtons = [
       <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.edit(item)}>
-      <Text style={{fontFamily:'FontBestBold',  color: 'blue', paddingLeft: entireScreenHeight / 30 }}>Apply</Text>
+      <Text style={{fontFamily:'FontBestBold',  color: 'black', paddingLeft: entireScreenHeight / 30 }}>Apply</Text>
 
   </TouchableHighlight>,
 
