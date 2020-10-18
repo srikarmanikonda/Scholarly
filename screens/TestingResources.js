@@ -61,12 +61,15 @@ export default class TestingResources extends React.Component{
 
         //MAKE SURE U HAVE THIS IF STATEMENT
         if (!this.state.loaded) {
-          return <AppLoading />;
+          return (
+          <View>
+            <StatusBar hidden />
+          </View>)
         }
 
         //end
         return(
-            <View style ={{flex:1,justifyContent:'center',alignItems:'center'}}>
+            <View style ={{flex:1,justifyContent:'center',alignItems:'center',}}>
                
             <LinearGradient
                 colors = {['#54C7E0','#3090D5','#337CD1','#00CEFC']}
@@ -80,7 +83,13 @@ export default class TestingResources extends React.Component{
 
              <View>
              <StatusBar hidden/>
+
             
+             <View>
+               <TouchableOpacity style={{marginBottom:height*0.2, marginTop:height*-0.22}} onPress={()=>navigate('HomeScreen')}>
+               <AntDesign name='arrowleft' size ={25} color='white'/>
+               </TouchableOpacity>
+             </View>
 
              <View style={{flexDirection:'row', marginBottom:height*0.05}}>
              <TouchableOpacity style={styles.button} onPress = {()=> {
