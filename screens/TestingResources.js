@@ -82,16 +82,17 @@ export default class TestingResources extends React.Component{
              }}/>
 
              <View>
+
+          
              <StatusBar hidden/>
 
             
-             <View>
-               <TouchableOpacity style={{marginBottom:height*0.2, marginTop:height*-0.22}} onPress={()=>navigate('HomeScreen')}>
-               <AntDesign name='arrowleft' size ={25} color='white'/>
-               </TouchableOpacity>
-             </View>
+        
 
-             <View style={{flexDirection:'row', marginBottom:height*0.05}}>
+             <View style={{flexDirection:'column', marginBottom:height*0.05}}>
+               <TouchableOpacity style={{marginBottom:height*0.07, marginTop:height*-0.02}} onPress={()=>navigate('HomeScreen')}>
+             <AntDesign name='arrowleft' color='white' size={25}/>
+             </TouchableOpacity> 
              <TouchableOpacity style={styles.button} onPress = {()=> {
                  Alert.alert(
                     '','For which test would you like to view dates/locations for?',
@@ -105,41 +106,37 @@ export default class TestingResources extends React.Component{
                     { cancelable: false }
                   );
              }}>
-                <Text style={{color:'white',fontSize:15, fontFamily:'FontBest', marginHorizontal:width*0.01, textAlign:'center'}}>Testing Center Locations</Text>
+                <View style={{flexDirection:'row'}}>
+                <Text style={{color:'white',fontSize:17, fontFamily:'FontBest', marginHorizontal:width*0.01, textAlign:'center'}}>Testing Center Locations</Text>
+                
+                <MaterialCommunityIcons name='map-marker' style={{color:'white',}} size={25}/>
+                </View>
+
             </TouchableOpacity>
             <View style ={{marginRight:width*0.04}}>
 
             </View>
             <TouchableOpacity style={styles.button} onPress={()=> navigate('PracTests')}>
                
-                <Text style={{color:'white',fontSize:15, fontFamily:'FontBest',  marginHorizontal:width*0.01, textAlign:'center'}}>ACT/SAT Practice Tests</Text>
-            
+                <View  style={{flexDirection:'row'}}>
+                <Text style={{color:'white',fontSize:17, fontFamily:'FontBest',  marginHorizontal:width*0.01, textAlign:'center'}}>ACT/SAT Practice Tests</Text>
+                <View style={{marginRight:width*0.015}}></View>
+                <MaterialCommunityIcons name='pencil' style={{color:'white',}} size={25}/>
+            </View>
             </TouchableOpacity>
             <View style ={{marginRight:width*0.04}}>
 
             </View>
             <TouchableOpacity style={styles.button}>
-                <Text style={{color:'white',fontSize:15, fontFamily:'FontBest', marginHorizontal:width*0.01, textAlign:'center'}}>Additional Resources</Text>
+                <View  style={{flexDirection:'row'}}>
+                <Text style={{color:'white',fontSize:17, fontFamily:'FontBest', marginHorizontal:width*0.01, textAlign:'center'}}>Additional Resources</Text>
+                <View style={{marginRight:width*0.02}}></View>
+             <FontAwesome5 name='hands-helping' color='white' size={25}/>
+           </View>
             </TouchableOpacity>
              </View>
 
-             <View style={{flexDirection:'row'}}>
-             <TouchableOpacity style={styles.button}>
-                <Text style={{color:'white',fontSize:15, marginHorizontal:width*0.01, textAlign:'center'}}>?</Text>
-            </TouchableOpacity>
-            <View style ={{marginRight:width*0.04}}>
-
-            </View>
-            <TouchableOpacity style={styles.button}>
-                <Text style={{color:'white',fontSize:15, marginHorizontal:width*0.01, textAlign:'center'}}>?</Text>
-            </TouchableOpacity>
-            <View style ={{marginRight:width*0.04}}>
-
-            </View>
-            <TouchableOpacity style={styles.button}>
-                <Text style={{color:'white',fontSize:15, marginHorizontal:width*0.01, textAlign:'center'}}>?</Text>
-            </TouchableOpacity>
-             </View>
+             
              </View>
 
             </View>
@@ -150,11 +147,12 @@ export default class TestingResources extends React.Component{
 
 const styles = StyleSheet.create({
     button: {
-        width:width*0.27,
+        width:width*0.8,
     backgroundColor:'#226bc0',
     borderRadius:25,
     height:height*0.2,
     alignItems:"center",
     justifyContent:"center",
+    marginBottom: height*0.03
     }
 })

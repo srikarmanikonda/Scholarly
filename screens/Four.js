@@ -1,5 +1,5 @@
 import React, {Component, useState, useRef, useEffect} from 'react';
-import { View, StatusBar, StyleSheet, ActivityIndicator, SafeAreaView, Text, TouchableWithoutFeedback, Keyboard, TextInput, TouchableOpacity, Dimensions, AsyncStorage, KeyboardAvoidingView, Share } from 'react-native';
+import { View, StatusBar, StyleSheet, ActivityIndicator, SafeAreaView, Text, TouchableWithoutFeedback, Keyboard, TextInput, TouchableOpacity, Dimensions, AsyncStorage, KeyboardAvoidingView, Share, Alert } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import {LinearGradient} from 'expo-linear-gradient'
 import { Camera } from 'expo-camera'
@@ -15,16 +15,13 @@ import { AntDesign,FontAwesome, Octicons, Feather, MaterialIcons, MaterialCommun
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
-export default function SATTestLoc ({ navigation }){
+
+export default function Four ({ navigation }){
 
   const webviewRef = useRef(null)
 
-  const navTR = () => {
-    navigation.navigate('SATTestLocMAIN')
-  }
-
-  const printSumthin = () => {
-      console.log("hello");
+  const navBack = () => {
+    navigation.navigate('Wellness')
   }
 
     return(
@@ -32,25 +29,25 @@ export default function SATTestLoc ({ navigation }){
       <SafeAreaView style={{flex:1}}>
           <StatusBar hidden/>
           <View style={styles.tabBarContainer}>
-          <TouchableOpacity onPress={navTR}>
-            <View style ={{marginTop: 3, marginRight:width*0.35}}>
+          <TouchableOpacity onPress={navBack}>
+            <View style ={{marginTop: 3, marginRight:width*0.45}}>
                 <AntDesign name='arrowleft' size ={25} color='white'/>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={console.log("NONO")}>
+          <TouchableOpacity onPress={console.log("HELLO")}>
             <View style ={{marginTop: 3, marginLeft:width*0.3}}>
-                <AntDesign name='find' size ={25} color='white'/>
+                <AntDesign name='find' size ={0} color='white'/>
             </View>
           </TouchableOpacity>
         </View>
         <WebView
-          source={{ uri: 'https://collegereadiness.collegeboard.org/sat/register/find-test-centers' }}
+          source={{ uri: 'https://www.samhsa.gov/find-treatment' }}
           startInLoadingState={true}
           renderLoading={() => (
             <ActivityIndicator
               color='black'
               size='large'
-              style={{marginBottom:height*0.5}}
+              style={{marginBottom: height*0.5}} //make this align/justify center
             />
           )}
           ref={webviewRef}

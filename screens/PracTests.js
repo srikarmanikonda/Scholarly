@@ -11,11 +11,19 @@ import { Button, Image, ListItem } from 'react-native-elements'
 import email from 'react-native-email'
 import { WebView } from 'react-native-webview';
 import { AntDesign,FontAwesome, Fontisto, Octicons, Feather, MaterialIcons, MaterialCommunityIcons, FontAwesome5, Entypo, Ionicons } from 'react-native-vector-icons';
+import * as Font from 'expo';
+import { AppLoading } from 'expo';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 var emailAd ='';
 var emailFromFireb = 'andrewtikhonov04@gmail.com'
+
+const fetchFonts = () => {
+        return Font.loadAsync({
+                'FontBest': require('../assets/fonts/Commissioner-Medium.ttf')
+        })
+}
 
 
 export default function PracTests({ navigation }) {
@@ -86,6 +94,11 @@ export default function PracTests({ navigation }) {
           return 'https://collegereadiness.collegeboard.org/pdf/sat-practice-test-'+numTestOK+'.pdf';
       }
 
+      const [loaded, setLoaded] = useState(false);
+
+if (!loaded){
+        return <AppLoading startAsync={fetchFonts} onFinish={()=>setLoaded(true)} onError={(err)=>console.log(err)}/>
+}
     return(
         <View>
 
@@ -97,7 +110,7 @@ export default function PracTests({ navigation }) {
                 <AntDesign name='arrowleft' size ={25} color='white'/>
             </View>
           </TouchableOpacity>
-          <Text style={{marginLeft:width*.11, marginRight:width*0.05, fontSize:13, marginTop:height*0.00, color:'white'}}>
+          <Text style={{fontFamily: 'FontBest',fontFamily: 'FontBest', marginLeft:width*.11, marginRight:width*0.05, fontSize:13, marginTop:height*0.00, color:'white'}}>
               View, download, and email ACT/SAT practice tests here!
           </Text>
         </View>
@@ -128,12 +141,12 @@ export default function PracTests({ navigation }) {
                height:height*2,
              }}/>
         <View style={{alignItems:'center'}}>
-        <Text style={{alignItems:'center', marginTop:height*0.03, marginBottom:height*0.0, marginHorizontal:width*0.05, fontSize:12}}>
+        <Text style={{fontFamily: 'FontBest',alignItems:'center', marginTop:height*0.03, marginBottom:height*0.0, marginHorizontal:width*0.05, fontSize:12}}>
             Note: ACT practice test answers can be found near the end of each respective booklet. SAT practice test answers can be accessed by clicking the icon to the right of each respective practice test.
         </Text>
         </View>
         <View style={{alignItems:'center'}}>
-        <Text style={{alignItems:'center', marginTop:height*0.01, marginBottom:height*0.01}}>
+        <Text style={{fontFamily: 'FontBest',alignItems:'center', marginTop:height*0.01, marginBottom:height*0.01}}>
             __________________________________________
         </Text>
         </View>
@@ -150,7 +163,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:16}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:16}}>
             ACT Practice Test: 2018-19
         </Text>
         
@@ -169,7 +182,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         <View style={{}}>
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:16}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:16}}>
             ACT Practice Test: 2015-16
         </Text>
         </View>
@@ -187,7 +200,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:16}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:16}}>
             ACT Practice Test: 2014-15
         </Text>
         
@@ -205,7 +218,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:16}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:16}}>
             ACT Practice Test: 2011-12
         </Text>
         
@@ -223,7 +236,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:16}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:16}}>
             ACT Practice Test: 2008-09
         </Text>
         
@@ -241,20 +254,20 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:16}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:16}}>
             ACT Practice Test: 2005-06
         </Text>
         
         </View>
 
         <View style={{alignItems:'center'}}>
-        <Text style={{alignItems:'center', marginTop:height*0.02, marginBottom:height*0.02}}>
+        <Text style={{fontFamily: 'FontBest',alignItems:'center', marginTop:height*0.02, marginBottom:height*0.02}}>
         __________________________________________
         </Text>
         </View>
 
         <View style={{alignItems:'center'}}>
-        <Text style={{alignItems:'center', marginTop:height*0.02, marginBottom:height*0.02, fontSize:12}}>
+        <Text style={{fontFamily: 'FontBest',alignItems:'center', marginTop:height*0.02, marginBottom:height*0.02, fontSize:12}}>
             Note: SAT Practice Tests 2 and 4 are currently unavailable.
         </Text>
         </View>
@@ -271,7 +284,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
             SAT Practice Test #1
         </Text>
 
@@ -279,7 +292,7 @@ export default function PracTests({ navigation }) {
         </View>
 
         <TouchableOpacity style={styles.button} onPress={()=>loadSAT('1-answers')}>
-                <Text style={{color:'white', fontSize:11}}>Answers</Text>
+                <Text style={{fontFamily: 'FontBest',color:'white', fontSize:11}}>Answers</Text>
         </TouchableOpacity>
         
         
@@ -297,7 +310,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
             SAT Practice Test #3
         </Text>
 
@@ -305,7 +318,7 @@ export default function PracTests({ navigation }) {
         </View>
 
         <TouchableOpacity style={styles.button} onPress={()=>loadSAT('3-answers')}>
-                <Text style={{color:'white', fontSize:11}}>Answers</Text>
+                <Text style={{fontFamily: 'FontBest',color:'white', fontSize:11}}>Answers</Text>
         </TouchableOpacity>
         
         </View>
@@ -322,7 +335,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
             SAT Practice Test #5
         </Text>
 
@@ -330,7 +343,7 @@ export default function PracTests({ navigation }) {
         </View>
 
         <TouchableOpacity style={styles.button} onPress={()=>loadSAT('5-answers')}>
-                <Text style={{color:'white', fontSize:11}}>Answers</Text>
+                <Text style={{fontFamily: 'FontBest',color:'white', fontSize:11}}>Answers</Text>
         </TouchableOpacity>
         
         </View>
@@ -347,7 +360,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
             SAT Practice Test #6
         </Text>
 
@@ -355,7 +368,7 @@ export default function PracTests({ navigation }) {
         </View>
 
         <TouchableOpacity style={styles.button} onPress={()=>loadSAT('6-answers')}>
-                <Text style={{color:'white', fontSize:11}}>Answers</Text>
+                <Text style={{fontFamily: 'FontBest',color:'white', fontSize:11}}>Answers</Text>
         </TouchableOpacity>
         
         </View>
@@ -372,7 +385,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
             SAT Practice Test #7
         </Text>
 
@@ -380,7 +393,7 @@ export default function PracTests({ navigation }) {
         </View>
 
         <TouchableOpacity style={styles.button} onPress={()=>loadSAT('7-answers')}>
-                <Text style={{color:'white', fontSize:11}}>Answers</Text>
+                <Text style={{fontFamily: 'FontBest',color:'white', fontSize:11}}>Answers</Text>
         </TouchableOpacity>
         
         </View>
@@ -397,7 +410,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
             SAT Practice Test #8
         </Text>
 
@@ -405,7 +418,7 @@ export default function PracTests({ navigation }) {
         </View>
 
         <TouchableOpacity style={styles.button} onPress={()=>loadSAT('8-answers')}>
-                <Text style={{color:'white', fontSize:11}}>Answers</Text>
+                <Text style={{fontFamily: 'FontBest',color:'white', fontSize:11}}>Answers</Text>
         </TouchableOpacity>
         
         </View>
@@ -422,7 +435,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
             SAT Practice Test #9
         </Text>
 
@@ -430,7 +443,7 @@ export default function PracTests({ navigation }) {
         </View>
 
         <TouchableOpacity style={styles.button} onPress={()=>loadSAT('9-answers')}>
-                <Text style={{color:'white', fontSize:11}}>Answers</Text>
+                <Text style={{fontFamily: 'FontBest',color:'white', fontSize:11}}>Answers</Text>
         </TouchableOpacity>
         
         </View>
@@ -447,7 +460,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.03, fontSize:15}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.03, fontSize:15}}>
             SAT Practice Test #10
         </Text>
 
@@ -455,7 +468,7 @@ export default function PracTests({ navigation }) {
         </View>
 
         <TouchableOpacity style={styles.button} onPress={()=>loadSAT('10-answers')}>
-                <Text style={{color:'white', fontSize:11}}>Answers</Text>
+                <Text style={{fontFamily: 'FontBest',color:'white', fontSize:11}}>Answers</Text>
         </TouchableOpacity>
         
         </View>
@@ -472,7 +485,7 @@ export default function PracTests({ navigation }) {
         </TouchableOpacity>
 
         
-        <Text style={{marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
+        <Text style={{fontFamily: 'FontBest',marginTop: height*0.023, marginLeft:width*0.04, fontSize:15}}>
             SAT Practice Test
         </Text>
         

@@ -16,6 +16,11 @@ import SATTestLocator from './screens/SATTestLoc'
 import TestingResources from './screens/TestingResources';
 import PracTest from './screens/PracTests';
 
+import One from './screens/One';
+import Two from './screens/Two';
+import Three from './screens/Three';
+import Four from './screens/Four';
+
 import ACTTestLocMAIN from './screens/ACTTestLocMAIN';
 import SATTestLocMAIN from './screens/SATTestLocMAIN';
 import ACTCustom from './screens/ACTCustom'
@@ -37,6 +42,22 @@ const AppNavigator = createSwitchNavigator({
   },
   Login: {
     screen: Login
+  },
+
+  One: {
+    screen: One
+  },
+
+  Two: {
+    screen: Two
+  },
+
+  Three:{
+    screen: Three
+  },
+
+  Four: {
+    screen: Four
   },
 
 
