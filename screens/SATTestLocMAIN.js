@@ -104,12 +104,12 @@ render(){
             alignItems:"center",
             justifyContent:"center",
         }} 
-        onPress={()=>console.log('SAT custom loc.')}>
+        onPress={()=>navigate('SATCustom')}>
         <View style={{flexDirection:'row', alignItems:'center', marginHorizontal:width*0.1}}>
             <Foundation name ='burst-new' style={{color:'white', marginLeft:width*-0.0}} size={40} />
             <View style={{marginRight:width*0.02}}>
             </View>
-            <Text style={{color:'white',fontSize:14, fontFamily:'FontBest',marginRight:width*0.0, marginLeft:width*0.0, textAlign:'center'}}>Try our custom test center locator that allows you to search for specific test dates and distances, and more easily view testing centers on a map (work in progress)!</Text>
+            <Text style={{color:'white',fontSize:14, fontFamily:'FontBest',marginRight:width*0.0, marginLeft:width*0.0, textAlign:'center'}}>Try our custom test center locator that allows you to search for specific towns/schools and distances, and more easily view testing centers on a map (work in progress)!</Text>
             </View>
         </TouchableOpacity>
              </View>

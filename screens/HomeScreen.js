@@ -94,7 +94,7 @@ render(){
                                </Text>
                                <Image style={{ width: width*0.15, height: height*0.15 }} source={require('../assets/image.png')} resizeMode='contain'></Image>
                              </TouchableOpacity>
-                             <View style={{marginRight:0.1*width}}>
+                             <View style={{marginRight:0.09*width}}>
                             </View>
                             <TouchableOpacity style={styles.button} onPress={()=> navigate('Scholarships')}>
                                <Text style={{fontFamily: 'FontBest3', marginTop:height*0.035, marginBottom:height*-0.02, fontSize: 20, color:'white'}}>
@@ -114,7 +114,7 @@ render(){
                                </Text>
                                <Image style={{ width: width*0.15, height: height*0.15 }} source={require('../assets/mental.png')} resizeMode='contain'></Image>
                              </TouchableOpacity>
-                             <View style={{marginRight:0.1*width}}>
+                             <View style={{marginRight:0.09*width}}>
                             </View>
 
                              <TouchableOpacity style={styles.button} onPress={()=> navigate('College')}>

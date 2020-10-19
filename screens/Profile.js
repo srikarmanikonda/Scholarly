@@ -93,6 +93,7 @@ const fetchFonts = () => {
   })
 }
 
+
 export default function ProfileScreen({ navigation }) {
 
   const [sadColor, setSad] = useState(sad)
@@ -120,6 +121,8 @@ export default function ProfileScreen({ navigation }) {
   const navHome = () => {
     navigation.navigate('HomeScreen')
   }
+
+  
 
   const loadInBrowser = () => {
     Linking.openURL('https://covid19responsefund.org/en/').catch(err => console.error("Couldn't load page", err));

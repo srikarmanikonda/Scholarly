@@ -6,6 +6,7 @@ import { SearchBar } from 'react-native-elements';
 import moment from "moment";
 import * as WebBrowser from 'expo-web-browser';
 import { AntDesign } from 'react-native-vector-icons'
+import * as Font from 'expo-font';
 
 
 const entireScreenHeight = Dimensions.get('window').height;
@@ -154,10 +155,23 @@ export default class App extends React.Component {
       data: predata,
       spinner: false,
       search: '',
+      loaded:false
     };
 
 
 
+  }
+
+  _loadFontsAsync = async () => {
+    let isLoaded = await Font.loadAsync({
+      FontBest: require("../assets/fonts/Commissioner-Light.ttf"),
+      FontBestBold: require("../assets/fonts/Commissioner-Bold.ttf"),
+    });
+    this.setState({ loaded: true });
+  };
+
+  componentDidMount() {
+    this._loadFontsAsync();
   }
 
   updateSearch = (search) => {
@@ -185,7 +199,7 @@ export default class App extends React.Component {
 
   _renderItem = ({ item }) => {
     const rightButtons = [
-      <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.one(item)}><Text style={{ color: 'white', paddingLeft: entireScreenHeight / 30 }}>View Website</Text></TouchableHighlight>,
+      <TouchableHighlight style={{ backgroundColor: '#add8e6', height: '100%', justifyContent: 'center', }} onPress={() => this.one(item)}><Text style={{fontFamily:'FontBest', color: 'white', paddingLeft: entireScreenHeight / 30 }}>View Website</Text></TouchableHighlight>,
     ];
     if (item.header) {
 
@@ -193,7 +207,7 @@ export default class App extends React.Component {
 
         <ListItem itemDivider >
           <Body style={{ marginRight: 0, alignItems: 'center' }}>
-            <Text style={{ fontWeight: "bold",font:'Arial' }}>
+            <Text style={{fontFamily:'FontBest'}}>
              {moment(item.date, 'MM-DD-YYYY').format('MMMM Do, YYYY')}
             </Text>
           </Body>
@@ -213,9 +227,9 @@ export default class App extends React.Component {
         <Swipeable rightButtons={rightButtons} rightButtonWidth={entireScreenWidth / 5} bounceOnMount={f}>
           <ListItem style={{ marginLeft: 0, backgroundColor: 'transparent' }}>
             <Body>
-              <Text style={{ flex: 1, fontFamily: 'WSB', color: 'black' }}>{item.name}</Text>
-              <Text style={{ flex: 1, fontFamily: 'WSR', color: 'black' }}>{item.description} </Text>
-              <Text style={{ flex: 1, fontFamily: 'WSR', color: 'black' }}>{item.deadline} </Text>
+              <Text style={{fontFamily:'FontBestBold', flex: 1, color: 'black' }}>{item.name}</Text>
+              <Text style={{fontFamily:'FontBest', flex: 1, color: 'black' }}>{item.description} </Text>
+              <Text style={{fontFamily:'FontBest', flex: 1, color: 'black' }}>{item.deadline} </Text>
             </Body>
           </ListItem>
         </Swipeable >
@@ -267,6 +281,13 @@ export default class App extends React.Component {
       ree = 1.75 * wid;
     }
 
+    if (!this.state.loaded) {
+      return (
+      <View>
+        <StatusBar hidden />
+      </View>)
+    }
+
       return (
 
         <View style={styles.container}>
@@ -301,7 +322,9 @@ export default class App extends React.Component {
             <View style={{ flex: 1, width: '90%', alignItems: 'center' }}>
               </View>
             <View style={{ width: '100%', flex: 8 }}>
+            <View style={{marginTop:entireScreenHeight*0.0}}>
 
+</View>
               <FlatList style={{ width: '100%',height:"100%",marginTop:"-18.3%" }}
 
                 data={this.state.data}
@@ -315,16 +338,16 @@ export default class App extends React.Component {
             </View>
 
 
-            <View style={{
+            {/* <View style={{
               width: '73%',
               flex: 1,
-              paddingBottom: '2%',
-              paddingTop: '2%',
+              paddingBottom: '1%',
+              paddingTop: '1%',
               justifyContent: 'center',
               alignItems: 'center'
 
-            }}>
-              <TouchableOpacity
+            }}> */}
+              {/* <TouchableOpacity
                 style={{
                   flex: 1,
                   width: entireScreenHeight / 8 * 0.96,
@@ -334,8 +357,8 @@ export default class App extends React.Component {
 
               >
 
-              </TouchableOpacity>
-            </View>
+              </TouchableOpacity> */}
+            {/* </View> */}
           </ImageBackground>
         </View>
       );

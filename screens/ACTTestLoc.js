@@ -48,11 +48,11 @@ export default function ACTTestLoc ({ navigation }){
           <StatusBar hidden/>
           <View style={styles.tabBarContainer}>
           <TouchableOpacity onPress={navTR}>
-            <View style ={{marginTop: 3, marginRight:width*0.35}}>
+            <View style ={{marginTop: 3, marginRight:width*0.4}}>
                 <AntDesign name='arrowleft' size ={25} color='white'/>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={console.log("HELLO")}>
+          <TouchableOpacity onPress={()=>navigation.navigate('RealMap')}>
             <View style ={{marginTop: 3, marginLeft:width*0.3}}>
                 <AntDesign name='find' size ={25} color='white'/>
             </View>
