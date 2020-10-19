@@ -15,6 +15,8 @@ import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import Prompt from 'react-native-input-prompt'
 import { Card, CardItem } from 'native-base'
 
+
+import * as Font from 'expo-font';
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 const data = require('../ACTdata.json')
@@ -29,11 +31,27 @@ export default class ACTCustom extends React.Component{
         super(props);
         this.state = {
             dropDownSelected: 'java',
-            finArr: []
+            dropDownSelected2: 'def',
+            finArr: [],
+            loadedFont: false
         }
     }
     static navigationOptions = {
         title: 'ACTCustom',
+      }
+
+
+     
+      _loadFontsAsync = async () => {
+        let isLoaded = await Font.loadAsync({
+          FontBest1: require("../assets/fonts/Commissioner-Thin.ttf"),
+          FontBest3: require("../assets/fonts/Commissioner-Light.ttf"),
+        });
+        this.setState({ loadedFont: true });
+      };
+    
+      componentDidMount() {
+        this._loadFontsAsync();
       }
 
 
@@ -71,6 +89,14 @@ showCenters (){
 
     render(){
         const {navigate} = this.props.navigation;
+
+        if (!this.state.loadedFont) {
+            return (
+            <View>
+              <StatusBar hidden />
+            </View>)
+          }
+
         return(
 
             //TO DO:
@@ -93,7 +119,7 @@ showCenters (){
             //change links in wellness?
             //final fixes
 
-            //funds of view/comps/props/organization ovr, look at prof.
+            //funds of view/comps/props/funcs/organization ovr, look at prof.
             //Type here wackyness?
             //thing at bottom - how do do? why nav home when press center?
 
@@ -114,18 +140,20 @@ showCenters (){
 
              <View style={styles.container}>
 
-             <TouchableOpacity style={styles.button} onPress={()=>this.showCenters()}>
-                <AntDesign name='arrowleft' style={{color:'white'}} size={20} onPress={()=> navigate('ACTTestLocMAIN')}/>
+             <TouchableOpacity style={styles.button} onPress={()=> navigate('ACTTestLocMAIN')}>
+                <AntDesign name='arrowleft' style={{color:'white'}} size={20} />
             </TouchableOpacity>
             <View style={{marginRight:width*0.05}}>
 
             </View>
+
+            <View>
              
                  <Card>
                      <CardItem>
                     <Picker
                     selectedValue={this.state.dropDownSelected}
-                    style={{ height: height*0.04, width: width*0.4 }}
+                    style={{ height: height*0.04, width: width*0.45, }}
                     onValueChange={(itemValue) => this.setState({dropDownSelected: itemValue})}
                     >
             <Picker.Item label="Select a Test Date..." value='select' />
@@ -144,11 +172,30 @@ showCenters (){
             </Picker>
             </CardItem>
             </Card>
+
+            <Card>
+                     <CardItem>
+                    <Picker
+                    selectedValue={this.state.dropDownSelected2}
+                    style={{ height: height*0.04, width: width*0.45 }}
+                    onValueChange={(itemValue) => this.setState({dropDownSelected2: itemValue})}
+                    >
+            <Picker.Item label="(Optional) Max Distance..." value='select' />
+            <Picker.Item label="5 Miles" value='5mi' />
+            <Picker.Item label="10 Miles" value='10mi' />
+            <Picker.Item label="25 Miles" value='25mi' />
+            <Picker.Item label="50 Miles" value='50mi' />
+            
+            </Picker>
+            </CardItem>
+            </Card>
+
+            </View>
             <View style={{marginRight:width*0.05}}>
 
             </View>
             <TouchableOpacity style={styles.button} onPress={()=>this.showCenters()}>
-                <Text style={{color:'white'}}>
+                <Text style={{fontFamily: 'FontBest3' ,color:'white'}}>
                     Go
                 </Text>
             </TouchableOpacity>
@@ -162,14 +209,14 @@ showCenters (){
                 <Card style={{width:width*0.7}}>
                     <CardItem style={{backgroundColor: '#fff'}}>
                         
-                        <Text style={{fontSize:16}}>
+                        <Text style={{fontFamily: 'FontBest3' ,fontSize:16}}>
                             {item.name}
                         </Text>
 
                     </CardItem>
                         
                     <CardItem style={{backgroundColor: '#fff', marginTop:height*-0.015}}>
-                        <Text style={{fontSize:12, color:'#555'}}>
+                        <Text style={{fontFamily: 'FontBest3' ,fontSize:12, color:'#555'}}>
                             {item.city}, {item.state}
                         </Text>
                 
@@ -181,7 +228,7 @@ showCenters (){
 
                 <View style={{marginTop:height*0.03}}>
                 <TouchableOpacity style={styles.button} onPress={()=>this.showCenters()}>
-                    <MaterialCommunityIcons name='map-marker' style={{color:'white',}} size={20} onPress={()=> console.log("showing on map, when connect with GMaps use method in ACTTestLoc")}/>
+                    <MaterialCommunityIcons name='map-marker' style={{color:'white',}} size={20} onPress={()=> navigate('RealMap')}/>
                 </TouchableOpacity>
                 </View>
 

@@ -183,11 +183,15 @@ export default class App extends React.Component {
   renderHeader = () => {
     const { search } = this.state;
 
-    return <SearchBar
+    return (
+      
+    <SearchBar
+      
     placeholder="Type Here..."
     onChangeText={this.updateSearch}
     value={search}
-  />;
+    
+  />)
   };
   static navigationOptions = { headerMode: 'none', gestureEnabled: false };
 
@@ -260,6 +264,9 @@ export default class App extends React.Component {
             <View style={{ flex: 1, width: '90%', alignItems: 'center' }}>
               </View>
             <View style={{ width: '100%', flex: 6 }}>
+              <View style={{marginTop:entireScreenHeight*0.0}}>
+
+              </View>
               <FlatList style={{ width: '100%' }}
                   marginTop ={'-24%'}
 
@@ -274,7 +281,7 @@ export default class App extends React.Component {
             </View>
 
 
-            <View style={{
+            {/* <View style={{
               width: '73%',
               flex: 1,
               paddingBottom: '2%',
@@ -294,7 +301,7 @@ export default class App extends React.Component {
               >
 
               </TouchableOpacity>
-            </View>
+            </View> */}
         </View>
       );
     }

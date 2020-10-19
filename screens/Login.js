@@ -1,5 +1,5 @@
 import React, {Component, useState} from 'react';
-import { View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Image, TextInput, TouchableOpacity, Dimensions, AsyncStorage, KeyboardAvoidingView } from 'react-native';
+import { View, StyleSheet, StatusBar,Text, TouchableWithoutFeedback, Keyboard, Image, TextInput, TouchableOpacity, Dimensions, AsyncStorage, KeyboardAvoidingView } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import {LinearGradient} from 'expo-linear-gradient'
 import { Camera } from 'expo-camera'
@@ -34,12 +34,17 @@ export default class Login extends React.Component{
       };
     }
 
-    async componentDidMount() {
-
-        await Font.loadAsync({
-          'Baloobb': require('../assets/fonts/BalooTammudu2-Medium.ttf'),
-        });
-      }
+    _loadFontsAsync = async () => {
+      let isLoaded = await Font.loadAsync({
+        FontBes: require("../assets/fonts/Commissioner-Thin.ttf"),
+        FontBes2: require("../assets/fonts/Commissioner-Light.ttf")
+      });
+      this.setState({ loaded: true });
+    };
+  
+    componentDidMount() {
+      this._loadFontsAsync();
+    }
 
 
     render(){
@@ -50,6 +55,13 @@ export default class Login extends React.Component{
         this.setState({ aight: status === 'granted' && hi });
       }
       const {navigate} = this.props.navigation;
+
+      if (!this.state.loaded) {
+        return (
+        <View>
+          <StatusBar hidden />
+        </View>)
+      }
     return (
 
         <View style={styles.container}>
@@ -64,13 +76,13 @@ export default class Login extends React.Component{
                height:height,
              }}
              />
-             <Image style={{height:height*0.3,width:width*0.6,top:"-7%"}} source={require('../assets/mainlogo2.png')}/>
-             <Text style={{ color: '#0300A3', fontSize:60, textAlign: 'center', top:height*-0.07,  fontFamily: 'Menlo' }}>Scholarly</Text>
+             <Image style={{height:height*0.15,width:width*0.3,top:"-7%"}} source={require('../assets/mainlogo2.png')}/>
+             <Text style={{ color: '#fff', fontSize:60, textAlign: 'center', top:height*-0.07,  fontFamily:'FontBes'}}>Scholarly</Text>
 
              <View style={styles.inputView} >
-
+<StatusBar hidden/>
                          <TextInput
-                           style={{ fontSize: 20, height: '100%', marginLeft: '5%', fontFamily: 'Menlo' }}
+                           style={{ fontSize: 15, fontFamily:'FontBes', height: '300%', marginLeft: '3%',  }}
                            autoCapitalize='none'
                            autoCompleteType='off'
                            placeholder="Email"
@@ -88,17 +100,27 @@ export default class Login extends React.Component{
                          <TextInput
                                              secureTextEntry={true}
 
-                           style={{ fontSize: 10 * rem, width: '95%', height: '100%', marginLeft: '5%', fontFamily: 'Menlo' }}
+                           style={{ fontSize: 15, fontFamily:'FontBes',width: '95%', height: '300%', marginLeft: '3%',  }}
                            autoCapitalize='none'
                            autoCompleteType='off'
                            placeholder="Password"
-                           placeholderTextColor="#4F4F4F"
+                           placeholderTextColor="black"
                            //keyboardType={Platform.OS === 'ios' ? 'ascii-capable' : 'visible-password'}
                            onChangeText={(value) => this.setState({ password: value })}
                            value={this.state.password}/>
                            </View>
 
-                             <TouchableOpacity style={{  width:width*0.69,
+                             
+                                
+
+                                               <Text style={{color: 'white', fontFamily:'FontBes2' ,textDecorationLine:'underline', fontSize:15,top:"3.5%", textShadowRadius:10, textShadowOffset:{width: -1, height: 1}}}
+                                               onPress={() =>navigate('Signup')}>Sign up</Text>
+
+
+                                                              <Text style={{color: 'white', fontFamily:'FontBes2', fontSize:15,top:"3.5%",textDecorationLine:'underline',   textShadowOffset:{width: -1, height: 1}}}
+                                                              onPress={() =>navigate('Signup')}>Forgot your password?</Text>
+
+{/* <TouchableOpacity style={{  width:width*0.69,
                                  backgroundColor:"white",
                                  borderRadius:25,
                                  height:height*0.09,
@@ -106,25 +128,22 @@ export default class Login extends React.Component{
                                  justifyContent:"center",
                                  top:"10%"
                                            }}
-                                           onPress = { () =>  Firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).catch(function(error){alert("There has been an issue logging in. Please check that all details were entered correctly. ") })} >
+                                           >
 
-                                </TouchableOpacity>
-                                <Text style={{ color: '#0300A3', fontSize:50, textAlign: 'center', top:"2%",  fontFamily: 'Menlo' }}>Login</Text>
-
-                                               <Text style={{color: 'white', fontSize:15,fontFamily:'Menlo',top:"-15%", textShadowRadius:10, textShadowOffset:{width: -1, height: 1}}}
-                                               onPress={() =>navigate('Signup')}> Sign up</Text>
+                                </TouchableOpacity> */}
 
 
-                                                              <Text style={{color: 'blue', fontSize:15,fontFamily:'Menlo',top:"-13%",textDecorationLine:'underline',   textShadowOffset:{width: -1, height: 1}}}
-                                                              onPress={() =>navigate('Signup')}>Forgot your password?</Text>
-
-
+<TouchableOpacity style={styles.button} onPress = { () =>  Firebase.auth().signInWithEmailAndPassword(this.state.username, this.state.password).catch(function(error){alert("There has been an issue logging in. Please check that all details were entered correctly. ") })} >
+                <View style={{flexDirection:'row'}}>
+                <Text style={{color:'white',fontSize:20, fontFamily:'FontBes2', marginHorizontal:width*0.01, textAlign:'center'}}>Log In</Text>
+                </View>
+            </TouchableOpacity>
 </View>
 )
 }
 }
 
-
+//
 
 
 
@@ -152,5 +171,15 @@ const styles = StyleSheet.create({
     marginBottom:20,
     justifyContent:"center",
     padding:20
-  }
+  },
+  button: {
+    width:width*0.8,
+backgroundColor:'#226bc0',
+borderRadius:25,
+height:height*0.07,
+alignItems:"center",
+justifyContent:"center",
+marginBottom: height*-0.00,
+marginTop:height*0.11
+}
   });

@@ -127,7 +127,7 @@ export default class TestingResources extends React.Component{
             <View style ={{marginRight:width*0.04}}>
 
             </View>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={()=>navigate('AddResources')}>
                 <View  style={{flexDirection:'row'}}>
                 <Text style={{color:'white',fontSize:17, fontFamily:'FontBest', marginHorizontal:width*0.01, textAlign:'center'}}>Additional Resources</Text>
                 <View style={{marginRight:width*0.02}}></View>

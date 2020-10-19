@@ -83,7 +83,7 @@ var goal = 2
 var hours = 1
 
 var percentage=(hours/goal)*100
-var streak = 10;
+var streak = 3;
 var userDesc='I am currently a student at Vernon Hills High School and in my spare time enjoy programming and playing tennis.'
 var x = 1.5
 
@@ -92,6 +92,7 @@ const fetchFonts = () => {
           'FontBest': require('../assets/fonts/Commissioner-Medium.ttf')
   })
 }
+
 
 export default function ProfileScreen({ navigation }) {
 
@@ -121,6 +122,8 @@ export default function ProfileScreen({ navigation }) {
     navigation.navigate('HomeScreen')
   }
 
+  
+
   const loadInBrowser = () => {
     Linking.openURL('https://covid19responsefund.org/en/').catch(err => console.error("Couldn't load page", err));
   };
@@ -143,9 +146,9 @@ export default function ProfileScreen({ navigation }) {
 
   const [loaded, setLoaded] = useState(false);
 
-  if (!loaded){
+  if (loaded==false){
     return <AppLoading startAsync={fetchFonts} onFinish={()=>setLoaded(true)} onError={(err)=>console.log(err)}/>
-}
+  }
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginTop:x+'%' }}>

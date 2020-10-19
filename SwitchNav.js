@@ -16,6 +16,8 @@ import SATTestLocator from './screens/SATTestLoc'
 import TestingResources from './screens/TestingResources';
 import PracTest from './screens/PracTests';
 
+import AddResources from './screens/AddResources';
+
 import One from './screens/One';
 import Two from './screens/Two';
 import Three from './screens/Three';
@@ -28,7 +30,8 @@ import ACTCustom from './screens/ACTCustom'
 import Wellness from'./screens/wellness';
 import Scholarships from './screens/Scholarships'
 import College from'./screens/colegio'
-
+import RealMap from './screens/RealMap'
+import SATCustom from './screens/SATCustom';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -37,12 +40,24 @@ var email = ''
 var password = ''
 
 const AppNavigator = createSwitchNavigator({
-  HomeScreen:{
-    screen: HomeScreen
-  },
+
   Login: {
     screen: Login
   },
+  HomeScreen:{
+    screen: HomeScreen
+  },
+  RealMap: {
+    screen: RealMap
+  },
+  AddResources:{
+    screen: AddResources
+  },
+  SATCustom:{
+    screen: SATCustom
+  },
+
+  
 
   One: {
     screen: One
