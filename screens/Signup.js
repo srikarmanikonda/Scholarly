@@ -138,7 +138,30 @@ export default class Signup extends React.Component{
                 />
                 </View>
 
-                <TouchableOpacity style={styles.button} onPress = { () =>  Firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).catch(function(error){alert("There has been an issue logging in. Please check that all details were entered correctly. ") })} >
+                <TouchableOpacity style={styles.button} onPress ={() =>
+                 {Firebase.auth().createUserWithEmailAndPassword(this.state.emails,this.state.passwords).catch(function(error){alert("There has been an error in signing up your account. Please check all fields again carefully and try again",console.log(error))}).then(function () {
+
+                   Firebase.database().ref('users/' + Firebase.auth().currentUser.uid).set({
+                     username:usernam,
+                     email: Firebase.auth().currentUser.email,
+                     password :passwords,
+
+
+                   })
+
+                 }).then(Alert.alert("Thanks for signing up!"), ("Your account has been created and will be approved soon!")).then(navigate("Home"))
+            }
+
+
+        }
+  onPress ={()=>  Firebase.auth().createUserWithEmailAndPassword(this.state.email,this.state.password).then(
+                Firebase.database().ref('users/' + Firebase.auth().currentUser.uid).set({
+                  name:usernames,
+                  email: Firebase.auth().currentUser.email,
+                  password:passwords
+})
+).then(navigate("HomeScreen"))
+} >
                 <View style={{flexDirection:'row'}}>
                 <Text style={{color:'white',fontSize:20, fontFamily:'FontBes2', marginHorizontal:width*0.01, textAlign:'center'}}>Sign Up</Text>
                 </View>
@@ -194,28 +217,5 @@ export default class Signup extends React.Component{
 
 
       /*
-      onPress ={() =>
-                 {Firebase.auth().createUserWithEmailAndPassword(this.state.emails,this.state.passwords).catch(function(error){alert("There has been an error in signing up your account. Please check all fields again carefully and try again",console.log(error))}).then(function () {
-
-                   Firebase.database().ref('users/' + Firebase.auth().currentUser.uid).set({
-                     username:usernam,
-                     email: Firebase.auth().currentUser.email,
-                     password :passwords,
-
-
-                   })
-
-                 }).then(Alert.alert("Thanks for signing up!"), ("Your account has been created and will be approved soon!")).then(navigate("Home"))
-            }
-
-
-        }
-  onPress ={()=>  Firebase.auth().createUserWithEmailAndPassword(this.state.email,this.state.password).then(
-                Firebase.database().ref('users/' + Firebase.auth().currentUser.uid).set({
-                  name:usernames,
-                  email: Firebase.auth().currentUser.email,
-                  password:passwords
-})
-).then(navigate("HomeScreen"))
-}
+      
 */
