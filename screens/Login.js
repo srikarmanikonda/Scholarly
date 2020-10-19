@@ -133,7 +133,7 @@ export default class Login extends React.Component{
                                 </TouchableOpacity> */}
 
 
-<TouchableOpacity style={styles.button} onPress = { () =>  Firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).catch(function(error){alert("There has been an issue logging in. Please check that all details were entered correctly. ") })} >
+<TouchableOpacity style={styles.button} onPress = { () =>  Firebase.auth().signInWithEmailAndPassword(this.state.username, this.state.password).catch(function(error){alert("There has been an issue logging in. Please check that all details were entered correctly. ") })} >
                 <View style={{flexDirection:'row'}}>
                 <Text style={{color:'white',fontSize:20, fontFamily:'FontBes2', marginHorizontal:width*0.01, textAlign:'center'}}>Log In</Text>
                 </View>
